@@ -1,0 +1,19 @@
+#!/bin/bash
+start-pulseaudio-x11
+setxkbmap "us+bg(phonetic):2+group(alt_shift_toggle)+terminate(ctrl_alt_bksp)"
+xsetroot -cursor_name left_ptr
+#terminator &
+/usr/libexec/gnome-settings-daemon &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+compton -m .9 &
+sh ~/.fehbg
+trayer-srg --edge top --align right --widthtype request --height 18 --transparent true --alpha 0 --tint 0x7f7f7f --distance 108 --distancefrom right --padding 16 --SetPartialStrut true &
+nm-applet &
+#bluetooth-applet &
+#gnome-sound-applet &
+parcellite &
+xscreensaver -nosplash &
+transmission-gtk &
+PULSE_LATENCY_MSEC=60 skype &
+pidof chrome || (chromium &)
+#dropbox start

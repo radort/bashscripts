@@ -1,0 +1,3 @@
+x11-drivers/xf86-video-intel glamor xvmc -sna uxa
+x11-drivers/xf86-video-ati glamor
+media-libs/mesa r600-llvm-compiler gles2 llvm-shared-libs

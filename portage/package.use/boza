@@ -1,0 +1,19 @@
+>=sys-libs/zlib-1.2.8 minizip
+>=dev-libs/elfutils-0.155 static-libs
+>=dev-libs/folks-0.9.2 eds
+>=dev-libs/libgdata-0.13.3 gnome
+>=media-libs/gst-plugins-base-1.0.7 theora
+>=sys-libs/talloc-2.0.8-r1 python
+>=dev-lang/python-2.7.5:2.7 sqlite
+>=app-i18n/ibus-1.5.3 dconf
+
+>=dev-libs/keybinder-0.3.0-r200:0 python
+>=x11-libs/vte-0.28.2-r206:0 python
+
+media-video/ffmpeg threads
+>=virtual/ffmpeg-9 threads
+>=media-plugins/gst-plugins-meta-0.10-r8:0.10 ffmpeg
+
+
+>=dev-libs/folks-0.9.2 vala
+>=gnome-extra/evolution-data-server-3.8.3 vala

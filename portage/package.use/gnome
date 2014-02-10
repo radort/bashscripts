@@ -1,0 +1,3 @@
+>=app-cdr/brasero-3.8.0 tracker
+>=gnome-base/nautilus-3.10.1 tracker
+>=media-plugins/grilo-plugins-0.2.9 upnp-av
