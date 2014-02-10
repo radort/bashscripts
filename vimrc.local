@@ -1,0 +1,83 @@
+set history=1000
+set wildmenu
+set ruler
+set backspace=indent,eol,start
+set whichwrap+=<,>,[,]
+set hlsearch
+set incsearch
+set lazyredraw
+set magic
+set showmatch
+set noerrorbells
+set visualbell t_vb=
+set background=dark
+set encoding=utf8
+set nobackup
+set nowb
+set noswapfile
+set smarttab
+set showcmd
+set ignorecase
+set infercase
+set showfulltag
+set scrolloff=5
+set sidescrolloff=5
+set hidden
+set number
+set smartindent
+set autoindent
+set autoread
+set mouse=a
+set timeoutlen=100
+
+syntax enable
+
+au FileType c setlocal makeprg=gcc\ %\ -o\ %:r\ -Wall\ $*
+au FileType cpp setlocal makeprg=g++\ %\ -o\ %:r\ -Wall\ $*
+au FileType haskell setlocal makeprg=ghc\ --make\ %
+
+autocmd QuickFixCmdPost [^l]* nested cwindow
+
+set errorformat=%f:%l:%c:\%m
+set errorformat+=%*[\"]%f%*[\"]\\,\ line\ %l:\ %m
+
+nmap <F8> :w<CR>:make<CR><CR>
+"nmap <F9> :w<CR>:make && ./%:r<CR>
+nmap <F10> :!./%:r<CR>
+nmap <F12> :w<CR>:!ghci %<CR><CR>
+nmap <C-D> :!bash<CR><CR>
+
+nmap Y y$
+nmap <C-J> <C-W>j
+nmap <C-K> <C-W>k
+nmap <C-L> <C-W>l
+nmap <C-H> <C-W>h
+
+cmap W w
+cmap Q q
+
+" set expandtab
+" set ts=4
+" set sw=4
+" set sts=4
+
+let mapleader='\'
+nmap <Leader>q :q<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
+nmap <Leader>s :w !sudo tee % > /dev/null<CR><CR>
+nmap <Leader>c :w<CR>:make<CR><CR>
+nmap <Leader>r :!./%:r<CR>
+nmap <Leader>i :w<CR>:!ghci %<CR><CR>
+nmap <Leader>b :!bash<CR><CR>
+nmap <Leader>g :!ghci<CR><CR>
+
+call pathogen#infect('/etc/vim/bundle/{}')
+call pathogen#helptags()
+
+if &term =~? 'xterm'
+	set t_Co=256
+	let g:badwolf_darkgutter = 1
+	let g:badwolf_tabline = 2
+	colorscheme badwolf
+	set cursorline
+endif
