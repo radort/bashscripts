@@ -1,0 +1,66 @@
+#! /bin/bash                        
+
+echo "start run @ " $(date "+%Y-%m-%d %H:%M") | tee /tmp/orphan-starttime 
+
+file01=/tmp/orphan01 
+file02=/tmp/orphan02 
+
+rm -f "${file01}" "${file02}" 
+
+search="/" 
+#search="/usr/share/doc/" 
+
+exclude="/bak /boot" 
+exclude="${exclude} /chroot /etc/gconf /etc/runlevels" 
+exclude="${exclude} /etc/ssl/certs"                    
+exclude="${exclude} /lib/modules"                      
+exclude="${exclude} /lost+found"                      
+exclude="${exclude} /opt/wxwidgets /portagecrap /root" 
+exclude="${exclude} /usr/lib/perl5/site_perl /usr/lib/python2.5/site_packages" 
+exclude="${exclude} /usr/local/src"                                            
+exclude="${exclude} /usr/portage"                                              
+exclude="${exclude} /usr/share/mime"                                          
+exclude="${exclude} /usr/src"                                                  
+exclude="${exclude} /var"                                                      
+exclude="${exclude} *.pyc *.pyo *.keep"                                        
+
+predicate="" 
+
+for dir in ${exclude} 
+do                    
+        predicate="${predicate} ${predicate:+"-o"} -path ${dir} -prune" 
+done 
+
+echo "building filelist ..." 
+echo find ${search} -xdev ${predicate} -o -print 
+     find ${search} -xdev ${predicate} -o -print > ${file01} 
+
+count=$(wc -l < ${file01}) 
+
+echo "scanning ${count} files for orphans" 
+
+# This version gives progress information but is slow 
+# 
+#let i=1 
+#for file in $(cat ${file01}) 
+#do 
+        #echo -ne "Checking ${i} of ${count} files...\r" 
+        #let i=$((i+1)) 
+        #qfile -o "${file}" >> ${file02} 
+#done 
+
+# This version gives no progress information but is faster 
+# 
+echo "qfile'ing ..." 
+qfile -o -f ${file01} > ${file02} 
+
+echo 
+echo 
+echo "Found $(wc -l ${file02} | awk '{print $1}') orphans." 
+echo 
+
+cp -a "${file02}" /root/orphan-results.$(date "+%Y-%m-%d.%H%M") 
+
+rm "${file01}" "${file02}" 
+
+echo "finish run @ " $(date "+%Y-%m-%d %H:%M") | tee /tmp/orphan-stoptime 
