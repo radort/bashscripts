@@ -1,4 +1,0 @@
-cross-arm-eabi/binutils -multilib
-cross-arm-eabi/gcc -multilib
-cross-arm-eabi/newlib -multilib
-cross-arm-eabi/gdb -multilib

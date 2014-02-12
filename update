@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Local scripts
+rsync -aP --delete /usr/local/bin/ localbin/
+cp /etc/profile.d/cuki.sh .
+
+# Portage and Layman configurations
+md portage
+rsync -aP --delete /etc/portage/ portage/portage/
+rsync -aP --delete /usr/local/portage/ portage/localoverlay/
+cp /var/lib/portage/world* portage/
+grep / /var/lib/layman/make.conf | sed 's/[a-z]*\///g' > portage/layman-overlays
+
+# XMonad configurations
+rsync -aP --delete ~/.xmonad/ xmonad/
+
+# Udev configurations
+rsync -aP --delete /etc/udev/rules.d/ udev-rules/
+
+# Vim configurations
+md vim
+cp /etc/vim/vimrc.local vim/
+ls /etc/vim/bundle/ > vim/plugins
+
+# /etc/fstab
+cp /etc/fstab .
+
+# Systemd services and configurations
+rsync -aP --delete /etc/systemd/ systemd/
+
+# screen and tmux configurations
+cp /etc/screenrc .
+cp /etc/tmux.conf .
+
+git status

@@ -6,6 +6,8 @@ alias md=mkdir
 alias -- -='cd -'
 alias :e=vim
 alias cal='cal -m'
+alias lspci=/usr/sbin/lspci
+alias prime='DRI_PRIME=1'
 
 [ $EUID == 0 ] &&
 PS1="\[\033[01;31m\]\h\[\033[01;34m\] \W \[\033[33m\]\$([ \$? == 0 ] && echo '^^' || echo ':(')\[\033[34m\] \$\[\033[00m\] " ||

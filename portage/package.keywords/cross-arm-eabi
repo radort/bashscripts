@@ -1,4 +1,0 @@
-cross-arm-eabi/binutils arm ~arm -amd64 -~amd64
-cross-arm-eabi/gcc arm ~arm -amd64 -~amd64
-cross-arm-eabi/newlib arm ~arm -amd64 -~amd64
-cross-arm-eabi/gdb arm ~arm -amd64 -~amd64

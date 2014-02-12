@@ -25,6 +25,8 @@ import XMonad.Layout.TrackFloating
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
+import XMonad.Layout.WindowArranger
+
 grid = Mirror $ SplitGrid GV.T 1 1 0.5 0.5 0.01
 mulcol = multiCol [1] 3 0.01 0.3
 --draw = simpleDrawer 0.012 0.2 (Title "the_gmaker - Skype™") `onLeft` grid
@@ -67,7 +69,7 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((mm, xK_F6), spawn "killall gnome-settings-daemon; exec /usr/libexec/gnome-settings-daemon")
 	, ((mm, xK_F7), spawn "sleep 0.5; xdotool key XF86TouchpadToggle")
 	, ((mm, xK_F8), spawn "sleep 0.1; xset dpms force off")
-	--
+
 	, ((mm, xK_F9), spawn "systemctl suspend -i")
 	, ((mm, xK_F10), spawn "systemctl hibernate -i")
 	, ((mm, xK_F11), spawn "systemctl reboot -i")
@@ -98,6 +100,21 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((controlMask .|. mod1Mask, xK_w), spawn "xdotool keydown Super")
 	, ((mm, xK_v), spawn "xdotool keyup Super")
 	, ((mm, xK_b), withFocused demanage)
+
+	, ((mm .|. controlMask              , xK_s    ), sendMessage  Arrange         )
+	, ((mm .|. controlMask .|. shiftMask, xK_s    ), sendMessage  DeArrange       )
+	, ((mm .|. controlMask              , xK_Left ), sendMessage (MoveLeft      10))
+	, ((mm .|. controlMask              , xK_Right), sendMessage (MoveRight     10))
+	, ((mm .|. controlMask              , xK_Down ), sendMessage (MoveDown      10))
+	, ((mm .|. controlMask              , xK_Up   ), sendMessage (MoveUp        10))
+	, ((mm                 .|. shiftMask, xK_Left ), sendMessage (IncreaseLeft  10))
+	, ((mm                 .|. shiftMask, xK_Right), sendMessage (IncreaseRight 10))
+	, ((mm                 .|. shiftMask, xK_Down ), sendMessage (IncreaseDown  10))
+	, ((mm                 .|. shiftMask, xK_Up   ), sendMessage (IncreaseUp    10))
+	, ((mm .|. controlMask .|. shiftMask, xK_Left ), sendMessage (DecreaseLeft  10))
+	, ((mm .|. controlMask .|. shiftMask, xK_Right), sendMessage (DecreaseRight 10))
+	, ((mm .|. controlMask .|. shiftMask, xK_Down ), sendMessage (DecreaseDown  10))
+	, ((mm .|. controlMask .|. shiftMask, xK_Up   ), sendMessage (DecreaseUp    10))
 
 	, ((0, 0x1008ff11), spawn "amixer set Master 5%-")
 	, ((0, 0x1008ff12), spawn "amixer set Master toggle")
@@ -153,7 +170,8 @@ main = do
 				className =? "Wine" -?> doFloat
 			]
 		, handleEventHook = fullscreenEventHook <+> perWindowKbdLayout <+> docksEventHook
-		, layoutHook = avoidStruts $ lessBorders Screen layout
+		, layoutHook = windowArrange $ avoidStruts $ smartBorders layout
+--		, layoutHook = avoidStruts $ lessBorders Screen layout
 		, logHook = updatePointer (0.5, 0.5) (0.2, 0.2)
 			>> (dynamicLogWithPP $ xmobarPP
 				{ ppSep = "<fc=#00ff00> | </fc>"
