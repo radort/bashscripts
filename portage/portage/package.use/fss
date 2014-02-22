@@ -1,0 +1,2 @@
+sys-fs/squashfs-tools xz lzma lzo
+sys-block/gparted ntfs fat btrfs
