@@ -4,7 +4,6 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.PerWindowKbdLayout
 import XMonad.Util.Run (spawnPipe)
---import XMonad.Util.WorkspaceCompare
 import System.IO
 
 import XMonad.Actions.Warp
@@ -20,23 +19,19 @@ import XMonad.Layout.GridVariants as GV
 import XMonad.Layout.MultiColumns
 import XMonad.Layout.TrackFloating
 --import XMonad.Layout.PerWorkspace
---import XMonad.Layout.Drawer
 
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
 import XMonad.Layout.WindowArranger
 
-grid = Mirror $ SplitGrid GV.T 1 1 0.5 0.5 0.01
-mulcol = multiCol [1] 3 0.01 0.3
---draw = simpleDrawer 0.012 0.2 (Title "the_gmaker - Skype™") `onLeft` grid
---layout = onWorkspace "9" draw (grid ||| trackFloating Full ||| mulcol)
-layout = grid ||| trackFloating Full ||| mulcol
+mulcol = multiCol [1] 3 0.01 0.5
+layout = mulcol ||| trackFloating Full
 
 myKeys :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	[ ((mm, xK_q), kill)
-	, ((mm .|. shiftMask, xK_q), killAllOtherCopies)
+	, ((mm .|. shiftMask, xK_q), kill1)
 	, ((mm .|. controlMask, xK_q), kill1)
 
 	, ((mm, xK_w), spawn $ XMonad.terminal conf)
@@ -55,7 +50,6 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((mm .|. shiftMask, xK_z), spawn "transset --actual 0")
 	, ((mm, xK_x), spawn "transset --actual --inc .05")
 	, ((mm .|. shiftMask, xK_x), spawn "transset --actual 1")
-
 	, ((mm, xK_c), spawn "gnome-control-center")
 	, ((mm .|. shiftMask, xK_c), spawn "gnome-calculator")
 
@@ -63,13 +57,13 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((mm .|. shiftMask, xK_F1), spawn "xscreensaver -nosplash")
 	, ((mm .|. controlMask, xK_F1), spawn "killall xscreensaver")
 --	, ((mm, xK_F2), spawn "killall -9 skype")
+	, ((mm, xK_F2), withFocused demanage)
 	, ((mm, xK_F3), spawn "xmonad --restart")
 	, ((mm, xK_F4), spawn "xmonad --recompile && xmonad --restart")
 	, ((mm, xK_F5), refresh)
 	, ((mm, xK_F6), spawn "killall gnome-settings-daemon; exec /usr/libexec/gnome-settings-daemon")
 	, ((mm, xK_F7), spawn "sleep 0.5; xdotool key XF86TouchpadToggle")
 	, ((mm, xK_F8), spawn "sleep 0.1; xset dpms force off")
-
 	, ((mm, xK_F9), spawn "systemctl suspend -i")
 	, ((mm, xK_F10), spawn "systemctl hibernate -i")
 	, ((mm, xK_F11), spawn "systemctl reboot -i")
@@ -82,24 +76,23 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((mm .|. shiftMask, xK_j), windows W.swapDown)
 	, ((mm .|. shiftMask, xK_m), windows W.swapMaster)
 	, ((mm, xK_space), windows W.shiftMaster)
-
 	, ((mm, xK_h), sendMessage Shrink)
 	, ((mm, xK_l), sendMessage Expand)
-	, ((mm .|. shiftMask, xK_h), sendMessage $ ChangeGridAspect (-0.1))
-	, ((mm .|. shiftMask, xK_l), sendMessage $ ChangeGridAspect 0.1)
-	, ((mm, xK_slash), sendMessage $ SetGridAspect 0.5)
-	, ((mm .|. shiftMask, xK_slash), (sendMessage $ SetMasterRows 1) <+> (sendMessage $ SetMasterCols 1))
 	, ((mm, xK_comma), sendMessage $ IncMasterN 1)
 	, ((mm, xK_period), sendMessage $ IncMasterN (-1))
-	, ((mm, xK_i), sendMessage $ IncMasterCols 1)
-	, ((mm, xK_o), sendMessage $ IncMasterCols(-1))
-	, ((mm .|. shiftMask, xK_i), sendMessage $ IncMasterRows 1)
-	, ((mm .|. shiftMask, xK_o), sendMessage $ IncMasterRows (-1))
-
 	, ((mm, xK_Tab), withFocused $ windows . W.sink)
+
+--	, ((mm .|. shiftMask, xK_h), sendMessage $ ChangeGridAspect (-0.1))
+--	, ((mm .|. shiftMask, xK_l), sendMessage $ ChangeGridAspect 0.1)
+--	, ((mm, xK_slash), sendMessage $ SetGridAspect 0.5)
+--	, ((mm .|. shiftMask, xK_slash), (sendMessage $ SetMasterRows 1) <+> (sendMessage $ SetMasterCols 1))
+--	, ((mm, xK_i), sendMessage $ IncMasterCols 1)
+--	, ((mm, xK_o), sendMessage $ IncMasterCols(-1))
+--	, ((mm .|. shiftMask, xK_i), sendMessage $ IncMasterRows 1)
+--	, ((mm .|. shiftMask, xK_o), sendMessage $ IncMasterRows (-1))
+
 	, ((controlMask .|. mod1Mask, xK_w), spawn "xdotool keydown Super")
 	, ((mm, xK_v), spawn "xdotool keyup Super")
-	, ((mm, xK_b), withFocused demanage)
 
 	, ((mm .|. controlMask              , xK_s    ), sendMessage  Arrange         )
 	, ((mm .|. controlMask .|. shiftMask, xK_s    ), sendMessage  DeArrange       )
@@ -130,6 +123,8 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((controlMask .|. shiftMask, xK_Up), spawn "pactl set-sink-volume 0 -- +10%")
 	, ((controlMask .|. shiftMask, 0x1008ff11), spawn "pactl set-sink-volume 0 -- -8%")
 	, ((controlMask .|. shiftMask, 0x1008ff13), spawn "pactl set-sink-volume 0 -- +8%")
+
+	--, ((mm, xK_s), windows $ W.greedyView XMonad.workspaces conf)
 	]
 	++
 	[ ((m .|. mm, k), windows $ f i)
@@ -163,15 +158,14 @@ main = do
 				isFullscreen -?> doFullFloat,
 				title =? "ettercap" -?> doFloat,
 				isDialog -?> doCenterFloat,
-				className =? "Chromium-browser" -?> doShift "4",
-				className =? "Skype" -?> doShift "9",
+				className =? "Chromium-browser" -?> doShift "2",
+				className =? "Skype" -?> doShift "3",
 				className =? "Transmission-gtk" -?> doShift "8",
 				className =? "Conky" -?> doIgnore,
 				className =? "Wine" -?> doFloat
 			]
 		, handleEventHook = fullscreenEventHook <+> perWindowKbdLayout <+> docksEventHook
-		, layoutHook = windowArrange $ avoidStruts $ smartBorders layout
---		, layoutHook = avoidStruts $ lessBorders Screen layout
+		, layoutHook = avoidStruts $ lessBorders Screen layout
 		, logHook = updatePointer (0.5, 0.5) (0.2, 0.2)
 			>> (dynamicLogWithPP $ xmobarPP
 				{ ppSep = "<fc=#00ff00> | </fc>"
@@ -180,9 +174,8 @@ main = do
 --				, ppUrgent = wrap "<" ">"
 --				, ppSort = getSortByXineramaRule
 				, ppLayout = (\ x -> case x of
-					"Mirror SplitGrid"	->	"G"
-					"Full"			->	"F"
 					"MultiCol"		->	"M"
+					"Full"			->	"F"
 				)
 			})
 	}

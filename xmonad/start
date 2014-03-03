@@ -15,5 +15,6 @@ parcellite &
 xscreensaver -nosplash &
 transmission-gtk &
 PULSE_LATENCY_MSEC=60 skype &
+skype-call-recorder &
 pidof chrome || (chromium &)
 #dropbox start

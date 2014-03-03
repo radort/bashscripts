@@ -68,6 +68,7 @@ media-sound/ncmpcpp
 media-sound/opus-tools
 media-sound/pavucontrol
 media-sound/projectm-pulseaudio
+media-sound/skype-call-recorder
 media-sound/soundconverter
 media-sound/split2flac
 media-sound/teamspeak-client-bin
@@ -86,6 +87,7 @@ net-ftp/ftp
 net-ftp/gftp
 net-ftp/pure-ftpd
 net-im/skype
+net-libs/nodejs
 net-misc/axel
 net-misc/badvpn
 net-misc/bfgminer

@@ -5,7 +5,7 @@ rsync -aP --delete /usr/local/bin/ localbin/
 cp /etc/profile.d/cuki.sh .
 
 # Portage and Layman configurations
-md portage
+mkdir portage
 rsync -aP --delete /etc/portage/ portage/portage/
 rsync -aP --delete /usr/local/portage/ portage/localoverlay/
 cp /var/lib/portage/world* portage/
@@ -18,7 +18,7 @@ rsync -aP --delete ~/.xmonad/ xmonad/
 rsync -aP --delete /etc/udev/rules.d/ udev-rules/
 
 # Vim configurations
-md vim
+mkdir vim
 cp /etc/vim/vimrc.local vim/
 ls /etc/vim/bundle/ > vim/plugins
 
