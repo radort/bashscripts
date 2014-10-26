@@ -1,6 +1,5 @@
-AutoComplPop
 badwolf
-clang_complete
-gundo.vim
+html5.vim
+nerdtree
 supertab
-vim-l9
+YouCompleteMe

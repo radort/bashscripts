@@ -1,0 +1,2 @@
+#!/bin/bash
+exec tmux -2 -S /tmp/tmux-0/default attach

@@ -1,0 +1,3 @@
+#dev-qt/qtwayland wayland-compositor egl
+#dev-qt/qtgui egl evdev
+#dev-qt/qtwebkit widgets

@@ -1,51 +1,57 @@
 set history=1000
-set wildmenu
-set ruler
+set wildmenu ruler showcmd
 set backspace=indent,eol,start
 set whichwrap+=<,>,[,]
-set hlsearch
-set incsearch
-set lazyredraw
-set magic
-set showmatch
-set noerrorbells
-set visualbell t_vb=
+set hlsearch incsearch magic
+set noerrorbells visualbell t_vb=
 set background=dark
 set encoding=utf8
-set nobackup
-set nowb
-set noswapfile
-set smarttab
-set showcmd
-set ignorecase
-set infercase
+set nobackup nowritebackup noswapfile
+set smartcase
 set showfulltag
-set scrolloff=5
-set sidescrolloff=5
+set scrolloff=5 sidescrolloff=5
 set hidden
 set number
-set smartindent
-set autoindent
+set smartindent autoindent cindent smarttab
 set autoread
+set ts=4 sw=4 sts=4
 set mouse=a
-set timeoutlen=100
+set timeoutlen=200
 
 syntax enable
 
-au FileType c setlocal makeprg=gcc\ %\ -o\ %:r\ -Wall\ $*
-au FileType cpp setlocal makeprg=g++\ %\ -o\ %:r\ -Wall\ $*
-au FileType haskell setlocal makeprg=ghc\ --make\ %
+"autocmd FileType c       setlocal makeprg=gcc\ '%'\ -o\ '%:r'\ -std=gnu11\ -Wall
+"autocmd FileType cpp     setlocal makeprg=g++\ '%'\ -o\ '%:r'\ -std=gnu++1y\ -Wall
+autocmd FileType c       setlocal makeprg=clang\ '%'\ -o\ '%:r'\ -std=gnu14\ -Wall
+autocmd FileType cpp     setlocal makeprg=clang++\ '%'\ -o\ '%:r'\ -std=gnu++14\ -Wall
+autocmd FileType haskell setlocal makeprg=ghc\ --make\ '%' shellpipe=2> expandtab
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
 set errorformat=%f:%l:%c:\%m
 set errorformat+=%*[\"]%f%*[\"]\\,\ line\ %l:\ %m
 
-nmap <F8> :w<CR>:make<CR><CR>
-"nmap <F9> :w<CR>:make && ./%:r<CR>
-nmap <F10> :!./%:r<CR>
+set errorformat+=%-Z\ %#
+set errorformat+=%W%f:%l:%c:\ Warning:\ %m
+set errorformat+=%E%f:%l:%c:\ %m
+set errorformat+=%E%>%f:%l:%c:
+set errorformat+=%+C\ \ %#%m
+set errorformat+=%W%>%f:%l:%c:
+set errorformat+=%+C\ \ %#%tarning:\ %m
+
+nmap <F8> :w<CR>:make -O2<CR><CR>
+nmap <F9> :w<CR>:make<CR><CR>
+nmap <F10> :!'%:p:r'<CR>
+nmap <C-F10> :w<CR>:!'%:p'<CR>
 nmap <F12> :w<CR>:!ghci %<CR><CR>
-nmap <C-D> :!bash<CR><CR>
+nmap <C-F12> :w<CR>:!ghci<CR><CR>
+nmap <C-D> :sh<CR>
+
+let mapleader='\'
+nmap <Leader>q :q<CR>
+nmap <Leader>e :NERDTreeToggle<CR>
+nmap <Leader>w :w !sudo tee % > /dev/null<CR><CR>
+nmap <Leader>p :make program<CR><CR>
 
 nmap Y y$
 nmap <C-J> <C-W>j
@@ -53,26 +59,11 @@ nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
 
-cmap W w
-cmap Q q
-
-" set expandtab
-" set ts=4
-" set sw=4
-" set sts=4
-
-let mapleader='\'
-nmap <Leader>q :q<CR>
-nmap <Leader>e :NERDTreeToggle<CR>
-nmap <Leader>s :w !sudo tee % > /dev/null<CR><CR>
-nmap <Leader>c :w<CR>:make<CR><CR>
-nmap <Leader>r :!./%:r<CR>
-nmap <Leader>i :w<CR>:!ghci %<CR><CR>
-nmap <Leader>b :!bash<CR><CR>
-nmap <Leader>g :!ghci<CR><CR>
-
-call pathogen#infect('/etc/vim/bundle/{}')
+call pathogen#infect('/usr/local/bundle/{}')
 call pathogen#helptags()
+
+let g:ycm_global_ycm_extra_conf = '/etc/vim/ycm_extra_conf.py'
+set completeopt-=preview
 
 if &term =~? 'xterm'
 	set t_Co=256
@@ -80,4 +71,6 @@ if &term =~? 'xterm'
 	let g:badwolf_tabline = 2
 	colorscheme badwolf
 	set cursorline
+else
+	colorscheme evening
 endif

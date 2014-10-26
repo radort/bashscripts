@@ -1,4 +1,0 @@
-cross-arm-eabi/binutils cross-arm-eabi/binutils.conf
-cross-arm-eabi/gcc cross-arm-eabi/gcc.conf
-cross-arm-eabi/newlib cross-arm-eabi/newlib.conf
-cross-arm-eabi/gdb cross-arm-eabi/gdb.conf

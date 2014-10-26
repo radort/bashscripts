@@ -1,3 +1,0 @@
-cross-arm-eabi/binutils -selinux multilib
-cross-arm-eabi/gcc -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc -fortran -go nocxx -cxx -openmp multilib
-cross-arm-eabi/newlib -selinux multilib

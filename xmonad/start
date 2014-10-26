@@ -1,20 +1,26 @@
 #!/bin/bash
-start-pulseaudio-x11
-setxkbmap "us+bg(phonetic):2+group(alt_shift_toggle)+terminate(ctrl_alt_bksp)"
+xrdb -merge ~/.xmonad/Xresources # Automate merge or sth
 xsetroot -cursor_name left_ptr
-#terminator &
-/usr/libexec/gnome-settings-daemon &
+#setxkbmap "us+bg(phonetic):2+group(alt_shift_toggle)"
+#synclient {Vert,Horiz}{Edge,TwoFinger}Scroll=1 TapButton{1=1,2=3,3=2}
+start-pulseaudio-x11
+#/usr/libexec/gnome-settings-daemon &
+sh ~/.fehbg & # Wallpaper
+#trayer-srg --edge top --align right --widthtype request --height 18 --transparent true --alpha 0 --tint 0x7f7f7f --distance 108 --distancefrom right --padding 16 --SetPartialStrut true &
+~/.cache/taffybar/taffybar-linux-x86_64 &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 compton -m .9 &
-sh ~/.fehbg
-trayer-srg --edge top --align right --widthtype request --height 18 --transparent true --alpha 0 --tint 0x7f7f7f --distance 108 --distancefrom right --padding 16 --SetPartialStrut true &
 nm-applet &
-#bluetooth-applet &
-#gnome-sound-applet &
+terminator &
+volti &
 parcellite &
 xscreensaver -nosplash &
-transmission-gtk &
-PULSE_LATENCY_MSEC=60 skype &
-skype-call-recorder &
+transmission-gtk -m &
+#bluetooth-applet &
+#gnome-sound-applet &
+#venom & # Tox gtk client
 pidof chrome || (chromium &)
+#sleep 15 # Testing
+PULSE_LATENCY_MSEC=60 skype &
+#skype-call-recorder &
 #dropbox start
