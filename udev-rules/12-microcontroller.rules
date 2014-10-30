@@ -1,2 +1,0 @@
-SUBSYSTEMS=="usb", ATTRS{product}=="Arduino*", NAME="ttyACM%n", MODE="0666"
-#SUBSYSTEMS=="usb", ATTRS{product}=="FT232R USB UART", ATTRS{manufacturer}=="FTDI", NAME="ttyUSB%n", SYMLINK+="arduino", MODE="0666"

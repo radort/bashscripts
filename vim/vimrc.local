@@ -66,6 +66,7 @@ let g:ycm_global_ycm_extra_conf = '/etc/vim/ycm_extra_conf.py'
 set completeopt-=preview
 
 if &term =~? 'xterm'
+	set t_ut=
 	set t_Co=256
 	let g:badwolf_darkgutter = 1
 	let g:badwolf_tabline = 2

@@ -59,6 +59,7 @@ games-emulation/pcsxr
 games-simulation/crashtest
 games-strategy/liquidwar
 gnome-base/gnome-light
+gnome-extra/nautilus-dropbox
 gnome-extra/nm-applet
 lxde-base/lxde-meta
 media-fonts/corefonts

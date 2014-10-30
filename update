@@ -2,7 +2,7 @@
 
 # Local scripts
 rsync -aP --delete /usr/local/bin/ localbin/
-cp /etc/profile.d/cuki.sh .
+#cp /etc/profile.d/cuki.sh .
 
 # Portage and Layman configurations
 mkdir portage
@@ -13,6 +13,10 @@ grep / /var/lib/layman/make.conf | sed 's/[a-z]*\///g' > portage/layman-overlays
 
 # XMonad configurations
 rsync -aP --delete ~/.xmonad/ xmonad/
+rm xmonad/xmonad{.o,.hi,-x86_64-linux}
+
+# Taffybar
+rsync -aP --delete ~/.config/taffybar/ taffybar/
 
 # Udev configurations
 rsync -aP --delete /etc/udev/rules.d/ udev-rules/
@@ -20,7 +24,8 @@ rsync -aP --delete /etc/udev/rules.d/ udev-rules/
 # Vim configurations
 mkdir vim
 cp /etc/vim/vimrc.local vim/
-ls /etc/vim/bundle/ > vim/plugins
+cp /etc/vim/gvimrc.local vim/
+ls /usr/local/bundle > vim/plugins
 
 # /etc/fstab
 cp /etc/fstab .
@@ -31,5 +36,8 @@ rsync -aP --delete /etc/systemd/ systemd/
 # screen and tmux configurations
 cp /etc/screenrc .
 cp /etc/tmux.conf .
+
+# Zsh
+rsync -aP /etc/zsh zsh/
 
 git status
