@@ -2,7 +2,7 @@
 
 # Local scripts
 rsync -aP --delete /usr/local/bin/ localbin/
-#cp /etc/profile.d/cuki.sh .
+cp /etc/profile.d/zsh.sh .
 
 # Portage and Layman configurations
 mkdir portage
@@ -34,10 +34,10 @@ cp /etc/fstab .
 rsync -aP --delete /etc/systemd/ systemd/
 
 # screen and tmux configurations
-cp /etc/screenrc .
+#cp /etc/screenrc .
 cp /etc/tmux.conf .
 
 # Zsh
-rsync -aP /etc/zsh zsh/
+rsync -aP /etc/zsh/ zsh/
 
 git status
