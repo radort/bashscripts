@@ -21,3 +21,10 @@ net-libs/gtk-vnc python
 
 # MyPaint
 dev-libs/protobuf python
+
+# Gnome
+dev-libs/libgdata gnome
+media-libs/clutter egl
+www-servers/apache apache2_modules_auth_digest
+media-libs/cogl gles2
+media-libs/libmediaart -qt4

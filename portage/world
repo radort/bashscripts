@@ -60,7 +60,6 @@ games-simulation/crashtest
 games-strategy/liquidwar
 gnome-base/gnome-light
 gnome-extra/nautilus-dropbox
-gnome-extra/nm-applet
 lxde-base/lxde-meta
 media-fonts/corefonts
 media-gfx/eog
@@ -139,9 +138,9 @@ sys-block/nbd
 sys-block/zram-init
 sys-boot/efibootmgr
 sys-boot/grub
+sys-boot/os-prober
 sys-boot/unetbootin
 sys-devel/crossdev
-sys-devel/distcc
 sys-devel/gdb
 sys-firmware/atmel-firmware
 sys-firmware/iwl2030-ucode
