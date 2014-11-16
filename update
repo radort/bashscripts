@@ -40,4 +40,7 @@ cp /etc/tmux.conf .
 # Zsh
 rsync -aP /etc/zsh/ zsh/
 
+# Mpd
+sed 's/".*@/"********@/g' ~/.mpd/mpd.conf > mpd.conf
+
 git status

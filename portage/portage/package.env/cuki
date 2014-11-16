@@ -44,6 +44,7 @@ dev-libs/glib no-lto.conf
 cross-*/* no-lto.conf
 dev-libs/libaio no-lto.conf
 net-print/cups-filters no-lto.conf
+sys-process/runit no-lto.conf
 
 # Failed -e world
 #sys-process/runit
