@@ -40,6 +40,9 @@ dev-libs/boost python
 www-servers/lighttpd php
 dev-lang/php gd cgi
 
+# VboxGtk
+app-emulation/virtualbox python
+
 ###
 media-sound/pulseaudio equalizer
 sys-apps/util-linux tty-helpers

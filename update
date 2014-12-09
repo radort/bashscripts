@@ -22,7 +22,7 @@ rsync -aP --delete ~/.config/taffybar/ taffybar/
 rsync -aP --delete /etc/udev/rules.d/ udev-rules/
 
 # Vim configurations
-mkdir vim
+mkdir -p vim
 cp /etc/vim/vimrc.local vim/
 cp /etc/vim/gvimrc.local vim/
 ls /usr/local/bundle > vim/plugins

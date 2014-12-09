@@ -21,6 +21,6 @@ transmission-gtk -m &
 #venom & # Tox gtk client
 pidof chrome || (chromium &)
 #sleep 15 # Testing
-PULSE_LATENCY_MSEC=60 skype &
+skype &
 #skype-call-recorder &
 #dropbox start

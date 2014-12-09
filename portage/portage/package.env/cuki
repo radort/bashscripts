@@ -37,50 +37,8 @@ x11-drivers/xf86-video-intel no-lto.conf
 x11-libs/cairo no-lto.conf
 x11-libs/wxGTK no-lto.conf
 sys-libs/glibc no-lto.conf
-dev-libs/glib no-lto.conf
 
 # My list
 */gcc no-lto.conf
 cross-*/* no-lto.conf
-dev-libs/libaio no-lto.conf
-net-print/cups-filters no-lto.conf
-sys-process/runit no-lto.conf
-
-# Failed -e world
-#sys-process/runit
-#cross-avr/avr-libc
-#media-libs/libvpx
-#sys-fs/ufsutils
-#dev-libs/boost
-#app-text/libmwaw
-#x11-misc/x11vnc
-#dev-qt/qtgui
-#sys-boot/syslinux
-#games-simulation/crashtest
-#sys-devel/binutils
-#sys-apps/paxctl
-#net-misc/tightvnc
-#cross-avr/gcc
-#cross-armv7a-hardfloat-linux-gnueabi/glibc
-#sys-libs/pam
-#net-p2p/bitcoind
-#dev-haskell/network
-#dev-libs/apr
-#sys-fs/btrfs-progs
-#gnome-base/libbonobo
-#x11-libs/gtkglext
-#sys-devel/distcc
-#x11-misc/virtualgl
-#net-print/cups-filters
-#net-p2p/bitcoin-qt
-#dev-libs/libfreenect
-#app-admin/sudo
-#mail-mta/nullmailer
-#dev-libs/weston
-#app-arch/p7zip
-#dev-util/codeblocks
-#media-sound/audacity
-#sci-electronics/gspiceui
-#media-video/vlc
-#net-libs/webkit-gtk
-#app-emulation/virtualbox
+sys-process/numactl no-lto.conf

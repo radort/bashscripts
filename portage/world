@@ -11,6 +11,7 @@ app-crypt/johntheripper
 app-editors/gvim
 app-editors/vim
 app-emulation/qemu
+app-emulation/vboxgtk
 app-emulation/virtualbox
 app-emulation/wine
 app-emulation/winetricks
@@ -24,8 +25,8 @@ app-portage/gentoolkit
 app-portage/layman
 app-portage/smart-live-rebuild
 app-shells/gentoo-bashcomp
+app-shells/gentoo-zsh-completions
 app-shells/zsh
-app-shells/zsh-completion
 app-vim/pathogen
 cross-armv7a-hardfloat-linux-gnueabi/binutils
 cross-armv7a-hardfloat-linux-gnueabi/gcc
@@ -91,9 +92,9 @@ media-video/vlc
 net-analyzer/cryptcat
 net-analyzer/ettercap
 net-analyzer/gnu-netcat
+net-analyzer/hydra
 net-analyzer/nload
 net-analyzer/nmap
-net-analyzer/snort
 net-analyzer/traceroute
 net-analyzer/wireshark
 net-dns/bind-tools
@@ -101,8 +102,8 @@ net-ftp/ftp
 net-ftp/gftp
 net-im/pidgin
 net-im/skype
+net-im/skype4pidgin
 net-im/toxic
-net-im/venom-av
 net-libs/nodejs
 net-misc/axel
 net-misc/badvpn
@@ -123,11 +124,13 @@ net-misc/youtube-dl
 net-p2p/bitcoin-qt
 net-p2p/bitcoind
 net-p2p/transmission
+net-proxy/torsocks
 net-wireless/hostapd
 net-wireless/iw
 sci-electronics/gspiceui
 sys-apps/ethtool
 sys-apps/hdparm
+sys-apps/irqbalance
 sys-apps/kexec-tools
 sys-apps/pv
 sys-apps/systemd-sysv-utils
@@ -143,7 +146,6 @@ sys-boot/unetbootin
 sys-devel/crossdev
 sys-devel/gdb
 sys-firmware/atmel-firmware
-sys-firmware/iwl2030-ucode
 sys-fs/bedup
 sys-fs/mtpfs
 sys-fs/squashfs-tools
@@ -152,6 +154,7 @@ sys-fs/ufsutils
 sys-fs/unionfs-fuse
 sys-kernel/gentoo-sources
 sys-kernel/git-sources
+sys-kernel/linux-firmware
 sys-process/htop
 sys-process/iotop
 sys-process/lsof
@@ -159,18 +162,18 @@ www-client/chromium
 www-client/firefox
 www-plugins/chrome-binary-plugins
 www-plugins/freshplayerplugin
-www-servers/lighttpd
+www-servers/nginx
 x11-apps/mesa-progs
 x11-apps/radeontop
 x11-apps/transset
 x11-base/xorg-x11
-x11-drivers/radeon-ucode
 x11-misc/compton
 x11-misc/gmrun
 x11-misc/kinect-mouse
 x11-misc/lightdm
 x11-misc/parcellite
 x11-misc/taffybar
+x11-misc/taffybar::cuki
 x11-misc/trayer-srg
 x11-misc/virtualgl
 x11-misc/wmname
@@ -178,7 +181,6 @@ x11-misc/x11vnc
 x11-misc/xdotool
 x11-misc/xmobar
 x11-misc/xscreensaver
-x11-plugins/skype4pidgin
 x11-terms/terminator
 x11-terms/xfce4-terminal
 x11-wm/xmonad-contrib
