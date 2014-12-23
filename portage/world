@@ -17,6 +17,7 @@ app-emulation/wine
 app-emulation/winetricks
 app-laptop/i8kutils
 app-misc/figlet
+app-misc/jq
 app-misc/reptyr
 app-misc/tmux
 app-office/libreoffice
@@ -57,9 +58,8 @@ dev-util/geany
 dev-util/strace
 games-emulation/dosbox
 games-emulation/pcsxr
-games-simulation/crashtest
 games-strategy/liquidwar
-gnome-base/gnome-light
+gnome-base/gnome
 gnome-extra/nautilus-dropbox
 lxde-base/lxde-meta
 media-fonts/corefonts

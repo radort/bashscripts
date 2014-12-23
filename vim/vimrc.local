@@ -22,8 +22,8 @@ syntax enable
 
 "autocmd FileType c       setlocal makeprg=gcc\ '%'\ -o\ '%:r'\ -std=gnu11\ -Wall
 "autocmd FileType cpp     setlocal makeprg=g++\ '%'\ -o\ '%:r'\ -std=gnu++1y\ -Wall
-autocmd FileType c       setlocal makeprg=clang\ '%'\ -o\ '%:r'\ -std=gnu14\ -Wall
-autocmd FileType cpp     setlocal makeprg=clang++\ '%'\ -o\ '%:r'\ -std=gnu++14\ -Wall
+autocmd FileType c       setlocal makeprg=clang\ '%'\ -o\ '%:r'\ -std=gnu11\ -Wall
+autocmd FileType cpp     setlocal makeprg=clang++\ '%'\ -o\ '%:r'\ -std=gnu++1z\ -Wall
 autocmd FileType haskell setlocal makeprg=ghc\ --make\ '%' shellpipe=2> expandtab
 
 autocmd QuickFixCmdPost [^l]* nested cwindow

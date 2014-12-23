@@ -1,7 +1,6 @@
 sys-libs/zlib minizip
 dev-lang/python sqlite
 
-
 # Terminator
 x11-libs/vte python
 dev-libs/keybinder python

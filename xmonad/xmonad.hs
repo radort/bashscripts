@@ -61,7 +61,7 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((mm .|. shiftMask, xK_F1), spawn "xscreensaver -nosplash")
 	, ((mm .|. controlMask, xK_F1), spawn "killall xscreensaver")
 --	, ((mm, xK_F2), spawn "killall -9 skype")
---	, ((mm, xK_F2), withFocused demanage)
+	, ((mm, xK_F2), withFocused demanage)
 	, ((mm, xK_F3), spawn "xmonad --restart")
 	, ((mm, xK_F4), spawn "xmonad --recompile && xmonad --restart")
 	, ((mm, xK_F5), refresh)

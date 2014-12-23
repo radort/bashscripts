@@ -42,3 +42,41 @@ sys-libs/glibc no-lto.conf
 */gcc no-lto.conf
 cross-*/* no-lto.conf
 sys-process/numactl no-lto.conf
+sys-process/runit no-lto.conf
+dev-python/pyorbit no-lto.conf
+x11-misc/x11vnc no-lto.conf
+net-misc/tightvnc no-lto.conf
+dev-qt/qtgui no-lto.conf
+sys-boot/syslinux no-lto.conf
+dev-vcs/git no-lto.conf
+dev-lang/ghc no-lto.conf
+dev-libs/weston no-lto.conf
+mail-mta/nullmailer no-lto.conf
+app-admin/sudo no-lto.conf
+app-arch/p7zip no-lto.conf
+media-sound/audacity no-lto.conf
+sci-electronics/gspiceui no-lto.conf
+media-video/vlc no-lto.conf
+net-libs/webkit-gtk no-lto.conf
+app-arch/pax no-lto.conf
+dev-libs/boost no-lto.conf
+net-print/cups no-lto.conf
+media-gfx/mypaint no-lto.conf
+
+net-p2p/bitcoin-qt no-lto.conf
+# Graphite
+
+#
+dev-qt/* defstd.conf
+app-text/libmwaw defstd.conf
+dev-libs/libfreenect defstd.conf
+app-emulation/virtualbox defstd.conf
+sys-apps/irqbalance defstd.conf
+media-libs/libvpx defstd.conf
+net-p2p/bitcoind defstd.conf no-lto.conf
+app-admin/testdisk defstd.conf
+sys-fs/btrfs-progs defstd.conf
+
+
+# avr-libc ufsutils avrdude cross-avr/gcc sys-libs/pam dev-haskell/network gnome-base/libbonobo gtkglext 
+# mypaint bitcoin-qt cups-filters virtualgl libreoffice qemu dev-util/codeblocks
