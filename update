@@ -2,7 +2,6 @@
 
 # Local scripts
 rsync -aP --delete /usr/local/bin/ localbin/
-cp /etc/profile.d/zsh.sh .
 
 # Portage and Layman configurations
 mkdir portage
@@ -23,8 +22,7 @@ rsync -aP --delete /etc/udev/rules.d/ udev-rules/
 
 # Vim configurations
 mkdir -p vim
-cp /etc/vim/vimrc.local vim/
-cp /etc/vim/gvimrc.local vim/
+rsync -aP /etc/vim/ vim/
 ls /usr/local/bundle > vim/plugins
 
 # /etc/fstab
@@ -39,6 +37,7 @@ cp /etc/tmux.conf .
 
 # Zsh
 rsync -aP /etc/zsh/ zsh/
+cp /etc/profile.d/zsh.sh zsh/
 
 # Mpd
 sed 's/".*@/"********@/g' ~/.mpd/mpd.conf > mpd.conf
