@@ -27,12 +27,12 @@ cpuTemp = getCPUTemp ["cpu1"]
 
 main = do
   let memCfg = defaultGraphConfig { graphDataColors = [(0, 1, 1, 1)]
-                                  , graphLabel = Just "ram"
+                                  , graphLabel = Just "ram "
                                   }
       cpuCfg = defaultGraphConfig { graphDataColors = [ (0, 1, 1, 1)
                                                       , (1, 0, 0, 1)
                                                       ]
-                                  , graphLabel = Just "cpu"
+                                  , graphLabel = Just "cpu "
                                   }
   let clock = textClockNew Nothing "<span fgcolor='lime'>%A</span> <span fgcolor='orange'>%d.%m.%Y %H:%M:%S</span> " 1
       pager = taffyPagerNew defaultPagerConfig

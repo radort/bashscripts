@@ -62,21 +62,13 @@ app-arch/pax no-lto.conf
 dev-libs/boost no-lto.conf
 net-print/cups no-lto.conf
 media-gfx/mypaint no-lto.conf
-
+net-p2p/bitcoind no-lto.conf
 net-p2p/bitcoin-qt no-lto.conf
-# Graphite
-
-#
-dev-qt/* defstd.conf
-app-text/libmwaw defstd.conf
-dev-libs/libfreenect defstd.conf
-app-emulation/virtualbox defstd.conf
-sys-apps/irqbalance defstd.conf
-media-libs/libvpx defstd.conf
-net-p2p/bitcoind defstd.conf no-lto.conf
-app-admin/testdisk defstd.conf
-sys-fs/btrfs-progs defstd.conf
+dev-util/codeblocks no-lto.conf
+app-office/libreoffice no-lto.conf
+dev-libs/libaio no-lto.conf
+gnome-base/orbit no-lto.conf
+dev-haskell/network no-lto.conf
 
 
-# avr-libc ufsutils avrdude cross-avr/gcc sys-libs/pam dev-haskell/network gnome-base/libbonobo gtkglext 
-# mypaint bitcoin-qt cups-filters virtualgl libreoffice qemu dev-util/codeblocks
+# avr-libc ufsutils avrdude cross-avr/gcc sys-libs/pam gtkglext 

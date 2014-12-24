@@ -12,6 +12,7 @@ import XMonad.Actions.UpdatePointer
 import XMonad.Actions.FlexibleResize
 import qualified XMonad.Actions.FloatSnap as FS
 import XMonad.Actions.DeManage
+import qualified XMonad.Actions.ConstrainedResize as Sqr
 
 import XMonad.Layout.NoBorders
 --import XMonad.Layout.Fullscreen
@@ -130,6 +131,7 @@ myMouse (XConfig {XMonad.modMask = mm}) = M.fromList
 	[ ((mm, button1), (\w -> focus w >> mouseMoveWindow w >> FS.snapMagicMove (Just 20) (Just 20) w))
 	, ((mm .|. shiftMask, button1), (\w -> focus w >> mouseMoveWindow w >> FS.snapMagicResize [FS.L,FS.R,FS.U,FS.D] (Just 20) (Just 20) w))
 	, ((mm, button3), (\w -> focus w >> mouseResizeEdgeWindow 0.5 w))
+    , ((mm .|. shiftMask, button3), (\w -> focus w >> Sqr.mouseResizeWindow w True))
 	]
 
 --ewmhDesktopsEventHookFilter :: Event -> X All
