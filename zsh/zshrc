@@ -55,21 +55,36 @@ export EDITOR=vim
 bindkey -e
 zmodload zsh/complist
 
-#typeset -A key
-#key[Up]="^[[A"
-#key[Down]="^[[B"
-#key[Left]="^[[D"
-#key[Right]="^[[C"
-#key[Delete]="^[[3~"
-#key[Insert]="^[[2~"
-#key[Home]="^[OH"
-#key[End]="^[OF"
-#key[PageUp]="^[[5~"
-#key[PageDown]="^[[6~"
-#key[CtrlRight]="^[[1;5C"
-#key[CtrlLeft]="^[[1;5D"
-#key[AltRight]="^[[1;3C"
-#key[AltLeft]="^[[1;3D"
+typeset -A key
+key[Up]="^[[A"
+key[Down]="^[[B"
+key[Left]="^[[D"
+key[Right]="^[[C"
+key[Delete]="^[[3~"
+key[Insert]="^[[2~"
+key[Home]="^[OH"
+key[End]="^[OF"
+key[PageUp]="^[[5~"
+key[PageDown]="^[[6~"
+key[CtrlRight]="^[[1;5C"
+key[CtrlLeft]="^[[1;5D"
+key[AltRight]="^[[1;3C"
+key[AltLeft]="^[[1;3D"
+
+bindkey -M emacs "${key[Up]}"        up-line-or-history
+bindkey -M emacs "${key[Down]}"      down-line-or-history
+bindkey -M emacs "${key[Left]}"      backward-char
+bindkey -M emacs "${key[Right]}"     forward-char
+bindkey -M emacs "${key[Delete]}"    delete-char
+bindkey -M emacs "${key[Insert]}"    overwrite-mode
+bindkey -M emacs "${key[Home]}"      beginning-of-line
+bindkey -M emacs "${key[End]}"       end-of-line
+bindkey -M emacs "${key[PageUp]}"    history-beginning-search-backward
+bindkey -M emacs "${key[PageDown]}"  history-beginning-search-forward
+bindkey -M emacs "${key[CtrlRight]}" forward-word
+bindkey -M emacs "${key[CtrlLeft]}"  backward-word
+bindkey -M emacs "${key[AltRight]}"  forward-word
+bindkey -M emacs "${key[AltLeft]}"   backward-word
 
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
