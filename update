@@ -1,45 +1,28 @@
 #!/bin/bash
 
-# Local scripts
-rsync -aP --delete /usr/local/bin/ localbin/
+function copy() {
+	rsync -aRP --delete --keep-dirlinks $1 .
+}
 
-# Portage and Layman configurations
-mkdir portage
-rsync -aP --delete /etc/portage/ portage/portage/
-rsync -aP --delete /usr/local/portage/ portage/localoverlay/
-cp /var/lib/portage/world* portage/
-grep / /var/lib/layman/make.conf | sed 's/[a-z]*\///g' > portage/layman-overlays
+copy ~/.config/systemd
+copy ~/.config/taffybar
+copy /etc/fstab
+copy /etc/portage
+copy /etc/systemd
+copy /etc/tmux.conf
+copy /etc/udev/rules.d
+copy /etc/vim
+copy /etc/X11
+copy /etc/zsh
+copy ~/.mpd/mpd.conf
+copy /usr/local/bin
+copy /usr/local/portage
+copy /var/lib/portage
+copy ~/.xmonad
 
-# XMonad configurations
-rsync -aP --delete ~/.xmonad/ xmonad/
-rm xmonad/xmonad{.o,.hi,-x86_64-linux}
-
-# Taffybar
-rsync -aP --delete ~/.config/taffybar/ taffybar/
-
-# Udev configurations
-rsync -aP --delete /etc/udev/rules.d/ udev-rules/
-
-# Vim configurations
-mkdir -p vim
-rsync -aP /etc/vim/ vim/
-ls /usr/local/bundle > vim/plugins
-
-# /etc/fstab
-cp /etc/fstab .
-
-# Systemd services and configurations
-rsync -aP --delete /etc/systemd/ systemd/
-
-# screen and tmux configurations
-#cp /etc/screenrc .
-cp /etc/tmux.conf .
-
-# Zsh
-rsync -aP /etc/zsh/ zsh/
-cp /etc/profile.d/zsh.sh zsh/
-
-# Mpd
-sed 's/".*@/"********@/g' ~/.mpd/mpd.conf > mpd.conf
+rm etc/vim/ycm_exta_conf.pyc
+rm home/krisi/.xmonad/xmonad-X86_64-linux
+find home/krisi/.xmonad/ -iname \*.o | xargs rm
+find home/krisi/.xmonad/ -iname \*.hi | xargs rm
 
 git status
