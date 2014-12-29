@@ -70,6 +70,10 @@ key[CtrlRight]="^[[1;5C"
 key[CtrlLeft]="^[[1;5D"
 key[AltRight]="^[[1;3C"
 key[AltLeft]="^[[1;3D"
+key[HomeTmux]="^[[1~"
+key[EndTmux]="^[[4~"
+key[CtrlRightTmux]="^[OC"
+key[CtrlLeftTmux]="^[OD"
 
 bindkey -M emacs "${key[Up]}"        up-line-or-history
 bindkey -M emacs "${key[Down]}"      down-line-or-history
@@ -85,6 +89,11 @@ bindkey -M emacs "${key[CtrlRight]}" forward-word
 bindkey -M emacs "${key[CtrlLeft]}"  backward-word
 bindkey -M emacs "${key[AltRight]}"  forward-word
 bindkey -M emacs "${key[AltLeft]}"   backward-word
+#
+bindkey -M emacs "${key[CtrlRightTmux]}" forward-word
+bindkey -M emacs "${key[CtrlLeftTmux]}"  backward-word
+bindkey -M emacs "${key[HomeTmux]}"      beginning-of-line
+bindkey -M emacs "${key[EndTmux]}"       end-of-line
 
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
@@ -113,7 +122,6 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias l='ls -lAh'
 alias dmesg='dmesg --color'
-alias x='sudo -i'
 alias pls='sudo $(history -p !!)'
 alias md=mkdir
 alias -- -='cd -'
@@ -125,3 +133,10 @@ alias update='emerge -DuNav --with-bdeps=y world'
 alias pbg='ping google.bg'
 alias p88='ping 8.8.8.8'
 alias tmux='tmux -2'
+
+function x() {
+	if (( $# == 0 ))
+		then sudo -i
+		else sudo $@
+	fi
+}

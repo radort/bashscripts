@@ -39,8 +39,7 @@ x11-libs/wxGTK no-lto.conf
 sys-libs/glibc no-lto.conf
 
 # My list
-*/gcc no-lto.conf
-cross-*/* no-lto.conf
+sys-devel/gcc no-lto.conf
 sys-process/numactl no-lto.conf
 sys-process/runit no-lto.conf
 dev-python/pyorbit no-lto.conf
@@ -69,6 +68,9 @@ app-office/libreoffice no-lto.conf
 dev-libs/libaio no-lto.conf
 gnome-base/orbit no-lto.conf
 dev-haskell/network no-lto.conf
+sys-devel/flex no-lto.conf
 
 
-# avr-libc ufsutils avrdude cross-avr/gcc sys-libs/pam gtkglext 
+cross-*/* defflags.conf
+
+# ufsutils avrdude gtkglext 

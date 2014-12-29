@@ -1,10 +1,4 @@
 
-XMonad/Hooks/PerWindowKbdLayout.hsc:65:10: Warning:
-    No explicit implementation for
-      either ‘poke’ or ‘pokeElemOff’ or ‘pokeByteOff’
-    In the instance declaration for ‘Storable XkbStateRec’
-
-xmonad.hs:144:29: Warning:
-    In the use of ‘defaultConfig’
-    (imported from XMonad, but defined in XMonad.Config):
-    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+xmonad.hs:29:8:
+    Could not find module ‘System.Taffybar.Hooks.PagerHints’
+    Use -v to see a list of the files searched for.

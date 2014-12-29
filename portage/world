@@ -19,6 +19,7 @@ app-laptop/i8kutils
 app-misc/figlet
 app-misc/jq
 app-misc/reptyr
+app-misc/sl
 app-misc/tmux
 app-office/libreoffice
 app-portage/genlop
@@ -29,17 +30,6 @@ app-shells/gentoo-bashcomp
 app-shells/gentoo-zsh-completions
 app-shells/zsh
 app-vim/pathogen
-cross-armv7a-hardfloat-linux-gnueabi/binutils
-cross-armv7a-hardfloat-linux-gnueabi/gcc
-cross-armv7a-hardfloat-linux-gnueabi/glibc
-cross-armv7a-hardfloat-linux-gnueabi/linux-headers
-cross-avr/avr-libc
-cross-avr/binutils
-cross-avr/gcc
-cross-i686-pc-linux-gnu/binutils
-cross-i686-pc-linux-gnu/gcc
-cross-i686-pc-linux-gnu/glibc
-cross-i686-pc-linux-gnu/linux-headers
 dev-db/sqliteman
 dev-embedded/arduino
 dev-embedded/gnoduino
@@ -81,7 +71,9 @@ media-sound/ncmpcpp
 media-sound/opus-tools
 media-sound/pavucontrol
 media-sound/projectm-pulseaudio
+media-sound/pympd
 media-sound/skype-call-recorder
+media-sound/sonata
 media-sound/soundconverter
 media-sound/split2flac
 media-sound/volti
@@ -133,7 +125,6 @@ sys-apps/hdparm
 sys-apps/irqbalance
 sys-apps/kexec-tools
 sys-apps/pv
-sys-apps/systemd-sysv-utils
 sys-apps/usb_modeswitch
 sys-apps/usbutils
 sys-block/gparted

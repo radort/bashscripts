@@ -23,7 +23,7 @@ virtual/ffmpeg threads vaapi
 media-video/mplayer2 ssse3
 
 # Wayland
-media-libs/mesa gbm gles2 r600-llvm-compiler xvmc
+media-libs/mesa gbm gles2 r600-llvm-compiler
 dev-libs/libpcre pcre16
 x11-libs/libxcb xkb
 dev-libs/weston examples xwayland
@@ -43,6 +43,7 @@ dev-lang/php gd cgi
 # VboxGtk
 app-emulation/virtualbox python
 
+
 ###
 media-sound/pulseaudio equalizer
 sys-apps/util-linux tty-helpers
@@ -59,6 +60,7 @@ x11-misc/xscreensaver new-login #gdm
 net-misc/tightvnc server
 dev-lang/ghc llvm
 sys-auth/pambase gnome-keyring
+sys-apps/systemd sysv-utils
 
 ###
 net-misc/networkmanager dhcpcd -dhclient

@@ -1,9 +1,0 @@
-[Unit]
-Description=StartX
-
-[Service]
-#User=bob
-ExecStart=/usr/bin/startx
-
-[Install]
-WantedBy=graphical.target

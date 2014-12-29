@@ -12,7 +12,7 @@ import System.Information.Memory
 import System.Information.CPU2
 
 import System.Taffybar.Battery
---import System.Taffybar.Kbd
+import System.Taffybar.Kbd
 
 memCallback = do
   mi <- parseMeminfo
@@ -23,7 +23,7 @@ memCallback = do
 --   return [totalLoad, systemLoad]
 
 cpuCallback = getCPULoad "cpu"
-cpuTemp = getCPUTemp ["cpu1"]
+--cpuTemp = getCPUTemp ["cpu1"]
 
 main = do
   let memCfg = defaultGraphConfig { graphDataColors = [(0, 1, 1, 1)]
@@ -49,7 +49,7 @@ main = do
       mem = pollingGraphNew memCfg 1 memCallback
       cpu = pollingGraphNew cpuCfg 1 cpuCallback
       tray = systrayNew
---      kbd = kbdLayoutNew
+      kbd = kbdLayoutNew ["[<span fgcolor='#7f7fff'>EN</span>]","[<span fgcolor='#ffff00'>BG</span>]"] 1.0
 --      battery = batteryBarNew (defaultBarConfig colorFunc) "$percentage$% $charge$$time$" 5
       battery = textBatteryNew "$percentage$% $time$" 5
           where colorFunc pct | pct < 0.1 = (1, 0, 0)
@@ -58,6 +58,6 @@ main = do
                               | otherwise = (0, 1, 0)
 
   defaultTaffybar defaultTaffybarConfig { startWidgets = [ pager ]
-                                        , endWidgets = reverse [ cpu, mem, battery, tray, clock ]
+                                        , endWidgets = reverse [ cpu, mem, battery, kbd, tray, clock ]
                                         , barHeight = 24
                                         }
