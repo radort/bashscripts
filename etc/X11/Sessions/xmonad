@@ -1,0 +1,3 @@
+#!/bin/sh
+~/.xmonad/start &
+exec /usr/bin/xmonad

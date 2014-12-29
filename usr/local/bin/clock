@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [[ 0 = $# ]]
+then
+	cat /sys/bus/cpu/devices/cpu*/cpufreq/scaling_max_freq
+fi
+if [[ 1 != $# ]]
+then
+	exit
+fi
+freq=${1}00000
+echo $freq | tee /sys/bus/cpu/devices/cpu*/cpufreq/scaling_max_freq

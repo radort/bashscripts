@@ -1,0 +1,6 @@
+sys-devel/gcc
+
+# Cross
+cross-i686-pc-linux-gnu/gcc
+cross-armv7a-hardfloat-linux-gnueabi/gcc
+cross-avr/gcc

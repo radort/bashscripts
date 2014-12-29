@@ -1,0 +1,9 @@
+#!/bin/bash
+while true; do
+	emerge --moo
+	sleep 2
+	echo '	Hi!	^_^'
+	sleep 2
+	sl
+done
+#exec awk {}

@@ -1,0 +1,17 @@
+## /etc/X11/xorg.conf.pxp 
+
+Section "Device" 
+        Identifier      "Device0" 
+        Driver          "radeon" 
+        BusID           "PCI:01:00:0" 
+EndSection 
+
+Section "Monitor" 
+        Identifier      "Monitor0" 
+EndSection 
+
+Section "Screen" 
+        Identifier      "Screen0" 
+        Monitor         "Monitor0" 
+        Device          "Device0" 
+EndSection
