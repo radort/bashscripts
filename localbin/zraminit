@@ -1,8 +1,0 @@
-#!/bin/bash
-modprobe zram num_devices=4
-echo $((256*1024*1024)) | tee /sys/block/zram{0,1,2,3}/disksize 
-mkswap /dev/zram0 
-mkswap /dev/zram1
-mkswap /dev/zram2
-mkswap /dev/zram3
-swapon -p 42 /dev/zram*

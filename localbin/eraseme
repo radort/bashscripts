@@ -1,4 +1,0 @@
-#!/bin/bash
-emerge --moo
-echo '	Hi!	^_^'
-exec awk {}
