@@ -1,2 +1,2 @@
-myconfigs
-=========
+My configurations
+=================
