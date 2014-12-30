@@ -9,12 +9,13 @@ autoload -U compinit
 compinit
 
 PS1="%B%(!.%F{red}%m.%F{green}%n@%m) %F{blue}%1~ %F{blue}%(!.#.$)%f%b "
+PS2="%B %_ %F{blue}>%f%b "
 
 
 #setopt correct
 #setopt correct_all
 #setopt complete_aliases
-#setopt complete_in_word
+setopt complete_in_word
 setopt auto_cd
 setopt extended_glob
 setopt long_list_jobs
@@ -29,20 +30,38 @@ setopt append_history hist_ignore_dups inc_append_history hist_expire_dups_first
 setopt octal_zeroes
 setopt no_list_ambiguous
 setopt rmstarsilent
+setopt auto_param_slash
 
 
 zstyle ':completion:*' menu select
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%B%F{red}Sorry, no matches for:%f %d%b'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*:descriptions' format '%U%B%F{yellow}%d%f%b%u'
+zstyle ':completion:*:warnings' format ' %U%B%F{red}No%u matches!%f%b'
+zstyle ':completion:*:corrections' format '%U%B%F{green}%d%f%b%f'
+zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:processes' command 'ps -eo pid,tty,cmd'
 zstyle ':completion:*:processes-names' command 'ps -eo cmd='
-#zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*=36=01;32}:${(s.:.)LS_COLORS}")'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle -e ':completion:*:aliases' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==04}")'
+zstyle -e ':completion:*:builtins' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==04}")'
+zstyle -e ':completion:*:commands' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==04}")'
+zstyle -e ':completion:*:parameters' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)*==04}")'
+#
 zstyle ':completion:*:options' list-colors '=^(-- *)=01;33'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=33=01;31'
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path /tmp/.zshcache
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+
+zstyle -e ':completion:*:hosts' hosts 'reply=(
+  ${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//,/ }
+  ${=${(f)"$(cat /etc/hosts(|)(N) <<(ypcat hosts 2>/dev/null))"}%%\#*}
+  ${=${${${${(@M)${(f)"$(cat ~/.ssh/config 2>/dev/null)"}:#Host *}#Host }:#*\**}:#*\?*}}
+)'
 
 
 export HISTSIZE=500
@@ -115,7 +134,6 @@ function zle-line-init {
 		RPS1=%B%F{red}SIG$signals[$((exc-127))]%f%b
 	else RPS1=%B%F{red}exit\ %F{magenta}%?%b%f
 	fi
-	RPS2=$RPS1
 	zle reset-prompt
 }
 zle -N zle-line-init
