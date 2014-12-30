@@ -2,3 +2,4 @@ cross-arm-unknown-linux-gnueabi
 cross-armv7a-hardfloat-linux-gnueabi
 cross-avr
 cross-i686-pc-linux-gnu
+cross-n
