@@ -21,7 +21,8 @@ copy /var/lib/portage
 copy ~/.xmonad
 
 rm etc/vim/ycm_exta_conf.pyc
-rm home/krisi/.xmonad/xmonad-X86_64-linux
+rm home/krisi/.xmonad/xmonad.errors
+rm home/krisi/.xmonad/xmonad-x86_64-linux
 find home/krisi/.xmonad/ -iname \*.o | xargs rm
 find home/krisi/.xmonad/ -iname \*.hi | xargs rm
 

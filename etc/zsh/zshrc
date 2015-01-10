@@ -38,7 +38,7 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:descriptions' format '%U%B%F{yellow}%d%f%b%u'
 zstyle ':completion:*:warnings' format ' %U%B%F{red}No%u matches!%f%b'
-zstyle ':completion:*:corrections' format '%U%B%F{green}%d%f%b%f'
+#zstyle ':completion:*:corrections' format '%U%B%F{green}%d%f%b%f'
 zstyle ':completion:*:manuals' separate-sections true
 zstyle ':completion:*:processes' command 'ps -eo pid,tty,cmd'
 zstyle ':completion:*:processes-names' command 'ps -eo cmd='
@@ -53,9 +53,9 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=33=01;31
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path /tmp/.zshcache
-zstyle ':completion:*' completer _complete _match _approximate
-zstyle ':completion:*:match:*' original only
-zstyle ':completion:*:approximate:*' max-errors 1 numeric
+#zstyle ':completion:*' completer _complete _match _approximate
+#zstyle ':completion:*:match:*' original only
+#zstyle ':completion:*:approximate:*' max-errors 1 numeric
 
 zstyle -e ':completion:*:hosts' hosts 'reply=(
   ${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) 2>/dev/null)"}%%[#| ]*}//,/ }

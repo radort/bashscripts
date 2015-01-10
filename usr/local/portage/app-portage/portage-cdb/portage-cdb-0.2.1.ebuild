@@ -8,7 +8,7 @@ SRC_URI=""
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="x86"
+KEYWORDS="x86 amd64"
 IUSE=""
 
 DEPEND=">=sys-apps/portage-2.1

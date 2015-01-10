@@ -1,3 +1,3 @@
 cross-avr/binutils -selinux multilib
-cross-avr/avr-libc -selinux multilib
-cross-avr/gcc -fortran -go -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc multilib
+cross-avr/avr-libc cxx -selinux multilib
+cross-avr/gcc -fortran -go -openmp -graphite cxx -sanitize -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc multilib

@@ -13,6 +13,7 @@ import XMonad.Actions.FlexibleResize
 import qualified XMonad.Actions.FloatSnap as FS
 import XMonad.Actions.DeManage
 import qualified XMonad.Actions.ConstrainedResize as Sqr
+import XMonad.Actions.CycleWS
 
 import XMonad.Layout.NoBorders
 --import XMonad.Layout.Fullscreen
@@ -114,6 +115,9 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 	, ((controlMask, xK_KP_End), spawn "xdotool click 1")
 	, ((controlMask, xK_KP_Down), spawn "xdotool click 2")
 	, ((controlMask, xK_KP_Page_Down), spawn "xdotool click 3")
+
+    , ((mm, xK_Left), prevWS)
+    , ((mm, xK_Right), nextWS)
 	]
 	++
 	[ ((m .|. mm, k), windows $ f i)

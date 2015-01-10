@@ -1,11 +1,11 @@
 app-admin/conky
 app-admin/sudo
 app-admin/testdisk
-app-arch/file-roller
 app-arch/lz4
 app-arch/lzop
 app-arch/p7zip
 app-arch/rar
+app-benchmarks/i7z
 app-cdr/cdrtools
 app-crypt/johntheripper
 app-editors/gvim
@@ -113,7 +113,6 @@ net-misc/networkmanager-vpnc
 net-misc/ntp
 net-misc/tightvnc
 net-misc/tor
-net-misc/vinagre
 net-misc/x2goclient
 net-misc/x2goserver
 net-misc/youtube-dl
@@ -168,7 +167,6 @@ x11-misc/kinect-mouse
 x11-misc/lightdm
 x11-misc/parcellite
 x11-misc/taffybar
-x11-misc/taffybar::cuki
 x11-misc/trayer-srg
 x11-misc/virtualgl
 x11-misc/wmname
