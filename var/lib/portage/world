@@ -7,7 +7,9 @@ app-arch/p7zip
 app-arch/rar
 app-benchmarks/i7z
 app-cdr/cdrtools
+app-crypt/chntpw
 app-crypt/johntheripper
+app-crypt/ophcrack
 app-editors/gvim
 app-editors/vim
 app-emulation/qemu
@@ -33,6 +35,7 @@ app-vim/pathogen
 cross-avr/avr-libc
 cross-avr/binutils
 cross-avr/gcc
+dev-db/mysql
 dev-db/sqliteman
 dev-embedded/arduino
 dev-embedded/gnoduino
@@ -117,12 +120,12 @@ net-misc/x2goclient
 net-misc/x2goserver
 net-misc/youtube-dl
 net-p2p/bitcoin-qt
-net-p2p/bitcoind
 net-p2p/transmission
 net-proxy/torsocks
 net-wireless/hostapd
 net-wireless/iw
 sci-electronics/gspiceui
+sys-apps/biosdisk
 sys-apps/ethtool
 sys-apps/hdparm
 sys-apps/irqbalance

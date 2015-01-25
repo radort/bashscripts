@@ -1,3 +1,3 @@
 #!/bin/sh
-~/.xmonad/start &
-exec /usr/bin/xmonad
+dbus-launch ~/.xmonad/start &
+exec dbus-launch /usr/bin/xmonad

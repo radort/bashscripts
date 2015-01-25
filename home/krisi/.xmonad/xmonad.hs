@@ -40,7 +40,7 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
 
 	, ((mm, xK_w), spawn $ XMonad.terminal conf)
 	, ((mm, xK_e), spawn "nautilus")
-	, ((mm .|. shiftMask, xK_e), spawn "nautilus")
+	, ((mm .|. shiftMask, xK_e), spawn "pcmanfm")
 	, ((mm, xK_r), spawn "gmrun")
 	, ((mm .|. shiftMask, xK_r), spawn "gnome-do")
 

@@ -1,0 +1,21 @@
+#!/bin/bash
+if [[ $1 == "start" ]]; then
+	:needtokill
+	killall wpa_supplicant && goto needtokill
+	systemctl start hostapd
+	systemctl start dnsmasq
+	sleep 1
+	ifconfig wlan0 10.42.0.1
+elif [[ $1 == "stop" ]]; then
+	systemctl stop hostapd
+	systemctl stop dnsmasq
+	sleep 1
+	systemctl restart NetworkManager
+elif [[ $1 == "nat" ]]; then
+	iptables -t nat -A POSTROUTING -o $2 -j MASQUERADE
+	iptables -A FORWARD -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+	iptables -A FORWARD -i wlan0 -o $2 -j ACCEPT
+	sysctl net.ipv4.ip_forward=1
+else
+	echo Не можеш да ползваш куба
+fi

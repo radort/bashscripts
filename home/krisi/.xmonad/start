@@ -15,12 +15,12 @@ terminator &
 volti &
 parcellite &
 xscreensaver -nosplash &
-transmission-gtk -m &
+#transmission-gtk -m &
 #bluetooth-applet &
 #gnome-sound-applet &
 #venom & # Tox gtk client
 pidof chrome || (chromium &)
-#sleep 15 # Testing
+sleep 15 # Testing
 skype &
 #skype-call-recorder &
 #dropbox start

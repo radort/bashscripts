@@ -69,7 +69,7 @@ dev-libs/libaio no-lto.conf
 gnome-base/orbit no-lto.conf
 dev-haskell/network no-lto.conf
 sys-devel/flex no-lto.conf
-
+dev-db/mysql no-lto.conf
 
 cross-*/* defflags.conf
 
