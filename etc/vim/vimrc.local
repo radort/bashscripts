@@ -19,12 +19,15 @@ set mouse=a
 set timeoutlen=200
 
 syntax enable
-
-"autocmd FileType c       setlocal makeprg=gcc\ '%'\ -o\ '%:r'\ -std=gnu11\ -Wall
-"autocmd FileType cpp     setlocal makeprg=g++\ '%'\ -o\ '%:r'\ -std=gnu++1y\ -Wall
-autocmd FileType c       setlocal makeprg=clang\ '%'\ -o\ '%:r'\ -std=gnu11\ -Wall
-autocmd FileType cpp     setlocal makeprg=clang++\ '%'\ -o\ '%:r'\ -std=gnu++1z\ -Wall
-autocmd FileType haskell setlocal makeprg=ghc\ --make\ '%' shellpipe=2> expandtab
+if filereadable("Makefile")
+	setlocal makeprg=make
+else
+	autocmd FileType c       setlocal makeprg=clang\ '%'\ -o\ '%:r'\ -std=gnu11\ -Wall
+	autocmd FileType cpp     setlocal makeprg=clang++\ '%'\ -o\ '%:r'\ -std=gnu++1z\ -Wall
+	autocmd FileType haskell setlocal makeprg=ghc\ --make\ '%' shellpipe=2> expandtab
+	autocmd FileType cabal   setlocal expandtab
+	autocmd FileType python  setlocal makeprg=python\ '%'
+endif
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
