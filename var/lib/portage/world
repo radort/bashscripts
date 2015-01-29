@@ -47,6 +47,8 @@ dev-lang/tcc
 dev-libs/libfreenect
 dev-libs/weston
 dev-python/pycrypto
+dev-util/android-sdk-update-manager
+dev-util/android-studio
 dev-util/android-tools
 dev-util/codeblocks
 dev-util/d-feet
