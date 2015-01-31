@@ -62,6 +62,8 @@ nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 nmap <C-H> <C-W>h
 
+set langmap=абцдефгхийкломнпярстужвьъзАБЦДЕФГХИЙКЛОМНПЯРСТУЖВЬЪЗ;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 call pathogen#infect('/usr/local/bundle/{}')
 call pathogen#helptags()
 
