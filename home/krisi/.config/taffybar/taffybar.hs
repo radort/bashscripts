@@ -14,6 +14,8 @@ import System.Information.CPU2
 import System.Taffybar.Battery
 import System.Taffybar.Kbd
 
+--import CukiModules
+
 memCallback = do
   mi <- parseMeminfo
   return [memoryUsedRatio mi]
