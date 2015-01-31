@@ -48,7 +48,6 @@ dev-libs/libfreenect
 dev-libs/weston
 dev-python/pycrypto
 dev-util/android-sdk-update-manager
-dev-util/android-studio
 dev-util/android-tools
 dev-util/codeblocks
 dev-util/d-feet
@@ -111,7 +110,6 @@ net-misc/badvpn
 net-misc/bfgminer
 net-misc/bridge-utils
 net-misc/gtkvncviewer
-net-misc/logmein-hamachi
 net-misc/networkmanager-openvpn
 net-misc/networkmanager-pptp
 net-misc/networkmanager-vpnc
