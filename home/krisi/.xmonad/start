@@ -19,8 +19,8 @@ xscreensaver -nosplash &
 #bluetooth-applet &
 #gnome-sound-applet &
 #venom & # Tox gtk client
-pidof chrome || (chromium &)
 sleep 15 # Testing
+pidof chrome || (chromium &)
 skype &
 #skype-call-recorder &
 #dropbox start
