@@ -28,6 +28,16 @@ def FlagsForFile( filename, **kwargs ):
       'flags': flagscpp,
       'do_cache': True
     }
+  elif(ext==".h"):
+    return {
+      'flags': flagscpp,
+      'do_cache': True
+    }
+  elif(ext==".hpp"):
+    return {
+      'flags': flagscpp,
+      'do_cache': True
+    }
   elif(ext==".c"):
     return {
       'flags': flagsc,
