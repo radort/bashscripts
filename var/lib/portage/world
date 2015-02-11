@@ -19,7 +19,6 @@ app-emulation/wine
 app-emulation/winetricks
 app-laptop/i8kutils
 app-misc/figlet
-app-misc/jq
 app-misc/reptyr
 app-misc/sl
 app-misc/tmux
@@ -78,7 +77,6 @@ media-sound/ncmpcpp
 media-sound/opus-tools
 media-sound/pavucontrol
 media-sound/projectm-pulseaudio
-media-sound/pympd
 media-sound/skype-call-recorder
 media-sound/sonata
 media-sound/soundconverter
@@ -104,6 +102,7 @@ net-im/pidgin
 net-im/skype
 net-im/skype4pidgin
 net-im/toxic
+net-im/utox
 net-libs/nodejs
 net-misc/axel
 net-misc/badvpn
