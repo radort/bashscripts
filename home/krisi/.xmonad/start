@@ -18,7 +18,7 @@ xscreensaver -nosplash &
 #transmission-gtk -m &
 #bluetooth-applet &
 #gnome-sound-applet &
-#venom & # Tox gtk client
+utox &
 sleep 15 # Testing
 pidof chrome || (chromium &)
 skype &
