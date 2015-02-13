@@ -2,8 +2,8 @@
 while true; do
 	emerge --moo
 	sleep 2
-	echo '	Hi!	^_^'
-	sleep 2
+	figlet 'Hi !	^_^'
+	sleep 5
 	sl
 done
 #exec awk {}
