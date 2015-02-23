@@ -55,7 +55,7 @@ zstyle -e ':completion:*:parameters' list-colors 'reply=("${PREFIX:+=(#bi)($PREF
 zstyle ':completion:*:options' list-colors '=^(-- *)=01;33'
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=33=01;31'
 zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
+zstyle ':completion:*:complete:*' use-cache 1
 zstyle ':completion:*' cache-path /tmp/.zshcache
 #zstyle ':completion:*' completer _complete _match _approximate
 #zstyle ':completion:*:match:*' original only
@@ -119,6 +119,8 @@ bindkey -M emacs "${key[EndTmux]}"       end-of-line
 
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
+bindkey -M menuselect "${key[Home]}" emacs-editing-mode
+bindkey -M menuselect "${key[End]}" emacs-editing-mode
 
 function zle-line-init {
 	exc=$?
