@@ -68,14 +68,12 @@ zstyle -e ':completion:*:hosts' hosts 'reply=(
 )'
 
 
-export HISTSIZE=500
+export HISTSIZE=1000
 export HISTFILE="$HOME/.bash_history" # Share history with bash
 export SAVEHIST=$HISTSIZE
 
 export EDITOR=vim
 
-
-bindkey -e
 
 typeset -A key
 key[Up]="^[[A"
@@ -96,53 +94,73 @@ key[HomeTmux]="^[[1~"
 key[EndTmux]="^[[4~"
 key[CtrlRightTmux]="^[OC"
 key[CtrlLeftTmux]="^[OD"
+key[AltBackspace]="^[^?"
+key[ShiftTab]="^[[Z"
 
-bindkey -M emacs "${key[Up]}"        up-line-or-history
-bindkey -M emacs "${key[Down]}"      down-line-or-history
-bindkey -M emacs "${key[Left]}"      backward-char
-bindkey -M emacs "${key[Right]}"     forward-char
-bindkey -M emacs "${key[Delete]}"    delete-char
-bindkey -M emacs "${key[Insert]}"    overwrite-mode
-bindkey -M emacs "${key[Home]}"      beginning-of-line
-bindkey -M emacs "${key[End]}"       end-of-line
-bindkey -M emacs "${key[PageUp]}"    history-beginning-search-backward
-bindkey -M emacs "${key[PageDown]}"  history-beginning-search-forward
-bindkey -M emacs "${key[CtrlRight]}" forward-word
-bindkey -M emacs "${key[CtrlLeft]}"  backward-word
-bindkey -M emacs "${key[AltRight]}"  forward-word
-bindkey -M emacs "${key[AltLeft]}"   backward-word
+bindkey -v
+
+for mode in vi{ins,cmd}; do
+	bindkey -M $mode "${key[Up]}"        up-line-or-history
+	bindkey -M $mode "${key[Down]}"      down-line-or-history
+	bindkey -M $mode "${key[Left]}"      backward-char
+	bindkey -M $mode "${key[Right]}"     forward-char
+	bindkey -M $mode "${key[Delete]}"    delete-char
+	bindkey -M $mode "${key[Insert]}"    overwrite-mode
+	bindkey -M $mode "${key[Home]}"      beginning-of-line
+	bindkey -M $mode "${key[End]}"       end-of-line
+	bindkey -M $mode "${key[PageUp]}"    history-beginning-search-backward
+	bindkey -M $mode "${key[PageDown]}"  history-beginning-search-forward
+	bindkey -M $mode "${key[CtrlRight]}" forward-word
+	bindkey -M $mode "${key[CtrlLeft]}"  backward-word
+	bindkey -M $mode "${key[AltRight]}"  forward-word
+	bindkey -M $mode "${key[AltLeft]}"   backward-word
 #
-bindkey -M emacs "${key[CtrlRightTmux]}" forward-word
-bindkey -M emacs "${key[CtrlLeftTmux]}"  backward-word
-bindkey -M emacs "${key[HomeTmux]}"      beginning-of-line
-bindkey -M emacs "${key[EndTmux]}"       end-of-line
+	bindkey -M $mode "${key[CtrlRightTmux]}" forward-word
+	bindkey -M $mode "${key[CtrlLeftTmux]}"  backward-word
+	bindkey -M $mode "${key[HomeTmux]}"      beginning-of-line
+	bindkey -M $mode "${key[EndTmux]}"       end-of-line
+#
+	bindkey -M $mode "${key[AltBackspace]}"  backward-kill-word
+done
 
 zmodload zsh/complist
-bindkey -M menuselect '^[[Z' reverse-menu-complete
+bindkey -M menuselect "${key[ShiftTab]}" reverse-menu-complete
 bindkey -M menuselect "${key[Home]}" emacs-editing-mode
 bindkey -M menuselect "${key[End]}" emacs-editing-mode
+bindkey -M menuselect "${key[HomeTmux]}" emacs-editing-mode
+bindkey -M menuselect "${key[EndTmux]}" emacs-editing-mode
 
 function zle-line-init {
 	exc=$?
 	if (($exc == 0)); then
-		RPS1=%B%F{yellow}^_^\ %F{green}OK%b
+		RPS1="%B%F{yellow}^_^ %F{green}OK%b"
 	elif (($exc == 1)); then
-		RPS1=%B%F{red}error\ %F{magenta}1%b
+		RPS1="%B%F{red}error %F{magenta}1%b"
 	elif (($exc == 2)); then
-		RPS1=%B%F{red}error\ %F{magenta}2%b
+		RPS1="%B%F{red}error %F{magenta}2%b"
 	elif (($exc == 124)); then
-		RPS1=%B%F{yellow}timeouted%b%f
+		RPS1="%B%F{yellow}timeouted%b%f"
 	elif (($exc == 126)); then
-		RPS1=%B%F{yellow}denied%b%f
+		RPS1="%B%F{yellow}denied%b%f"
 	elif (($exc == 127)); then
-		RPS1=%B%F{yellow}not\ found%b%f
+		RPS1="%B%F{yellow}not found%b%f"
 	elif (($exc > 127 && $exc < 162)); then
-		RPS1=%B%F{red}SIG${signals[$((exc-128))]}%f%b
-	else RPS1=%B%F{red}exit\ %F{magenta}%?%b%f
+		RPS1="%B%F{red}SIG${signals[$((exc-128))]}%f%b"
+	else RPS1="%B%F{red}exit %F{magenta}%?%b%f"
 	fi
 	zle reset-prompt
 }
+function zle-keymap-select {
+	case $KEYMAP in
+		vicmd) RPS1="%B%F{cyan}-- CMD --%f%b ";;
+		viins|main) RPS1="";;
+	esac
+	RPS2=$RPS1
+	zle reset-prompt
+}
+RPS1=""
 zle -N zle-line-init
+zle -N zle-keymap-select
 
 
 alias ls='ls --color=auto'
