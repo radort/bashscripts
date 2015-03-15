@@ -2,6 +2,7 @@ app-office/libreoffice no-tmpfs.conf
 www-client/firefox no-tmpfs.conf
 www-client/chromium no-tmpfs.conf
 sys-devel/llvm no-tmpfs.conf
+dev-lang/ghc no-tmpfs.conf
 
 
 
@@ -61,15 +62,14 @@ app-arch/pax no-lto.conf
 dev-libs/boost no-lto.conf
 net-print/cups no-lto.conf
 media-gfx/mypaint no-lto.conf
-net-p2p/bitcoind no-lto.conf
-net-p2p/bitcoin-qt no-lto.conf
-dev-util/codeblocks no-lto.conf
 app-office/libreoffice no-lto.conf
 dev-libs/libaio no-lto.conf
 gnome-base/orbit no-lto.conf
 dev-haskell/network no-lto.conf
 sys-devel/flex no-lto.conf
-dev-db/mysql no-lto.conf
+media-libs/libvpx no-lto.conf
+sys-apps/man-db no-lto.conf
+x11-libs/gtkglext no-lto.conf
 
 cross-*/* defflags.conf
 

@@ -1,0 +1,4 @@
+media-libs/mesa gbm gles2 r600-llvm-compiler
+dev-libs/libpcre pcre16
+x11-libs/libxcb xkb
+dev-libs/weston examples xwayland

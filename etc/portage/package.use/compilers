@@ -1,0 +1,2 @@
+sys-devel/gcc -gtk -fortran
+sys-devel/llvm clang

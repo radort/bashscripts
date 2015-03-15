@@ -1,11 +1,4 @@
-gnome-extra/evolution-data-server vala
-media-libs/grilo playlist
+media-libs/cogl gles2
+media-libs/gst-plugins-base theora
 dev-libs/folks eds
 
-dev-libs/libgdata gnome
-media-libs/clutter egl
-www-servers/apache apache2_modules_auth_digest
-media-libs/cogl gles2
-media-libs/libmediaart -qt4
-
-media-plugins/grilo-plugins upnp-av

@@ -1,25 +1,23 @@
 #!/bin/bash
-xrdb -merge ~/.xmonad/Xresources # Automate merge or sth
-xsetroot -cursor_name left_ptr
+#xsetroot -cursor_name left_ptr
 #setxkbmap "us+bg(phonetic):2+group(alt_shift_toggle)"
 #synclient {Vert,Horiz}{Edge,TwoFinger}Scroll=1 TapButton{1=1,2=3,3=2}
-start-pulseaudio-x11
 #/usr/libexec/gnome-settings-daemon &
-sh ~/.fehbg & # Wallpaper
 #trayer-srg --edge top --align right --widthtype request --height 18 --transparent true --alpha 0 --tint 0x7f7f7f --distance 108 --distancefrom right --padding 16 --SetPartialStrut true &
-~/.cache/taffybar/taffybar-linux-x86_64 &
-/usr/libexec/polkit-gnome-authentication-agent-1 &
+xrdb -merge ~/.xmonad/Xresources & # Automate merge or sth
+start-pulseaudio-x11 &
 compton -m .9 &
-nm-applet &
-terminator &
-volti &
-parcellite &
-xscreensaver -nosplash &
+sh ~/.fehbg &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
+~/.cache/taffybar/taffybar-linux-x86_64 &
 #transmission-gtk -m &
-#bluetooth-applet &
-#gnome-sound-applet &
-utox &
-sleep 15 # Testing
+#utox &
+terminator &
+nm-applet &
+parcellite &
+volti &
+xscreensaver -nosplash &
+sleep 30
 pidof chrome || (chromium &)
 skype &
 #skype-call-recorder &

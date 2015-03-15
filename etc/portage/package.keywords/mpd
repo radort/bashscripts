@@ -1,0 +1,8 @@
+media-libs/glyr **
+media-libs/libmpd **
+media-libs/libmpdclient **
+media-plugins/gmpc-lyricswiki **
+media-sound/gmpc **
+media-sound/mpc **
+media-sound/mpd **
+media-sound/ncmpcpp **

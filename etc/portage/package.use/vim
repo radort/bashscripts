@@ -1,0 +1,3 @@
+app-editors/vim vim-pager python
+app-editors/gvim python
+dev-libs/boost python

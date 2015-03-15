@@ -11,7 +11,7 @@ set smartcase
 set showfulltag
 set scrolloff=5 sidescrolloff=5
 set hidden
-set number
+set number relativenumber
 set smartindent autoindent cindent smarttab
 set autoread
 set ts=4 sw=4 sts=4

@@ -1,1 +1,44 @@
-{}
+{
+	"dev-haskell/cairo:0": [
+		"dev-haskell/cairo-0.13.1.0",
+		"1789",
+		[
+			"/usr/lib64/cairo-0.13.0.6/ghc-7.8.4/libHScairo-0.13.0.6-ghc7.8.4.so"
+		]
+	],
+	"dev-haskell/glib:0": [
+		"dev-haskell/glib-0.13.1.0",
+		"1755",
+		[
+			"/usr/lib64/glib-0.13.0.7/ghc-7.8.4/libHSglib-0.13.0.7-ghc7.8.4.so"
+		]
+	],
+	"dev-haskell/transformers:0": [
+		"dev-haskell/transformers-0.4.2.0",
+		"1794",
+		[
+			"/usr/lib64/transformers-0.4.2.0/ghc-7.8.4/libHStransformers-0.4.2.0-ghc7.8.4.so"
+		]
+	],
+	"dev-haskell/utf8-string:0": [
+		"dev-haskell/utf8-string-1",
+		"1712",
+		[
+			"/usr/lib64/utf8-string-0.3.8/ghc-7.8.4/libHSutf8-string-0.3.8-ghc7.8.4.so"
+		]
+	],
+	"x11-wm/xmonad-contrib:0": [
+		"x11-wm/xmonad-contrib-9999",
+		"1788",
+		[
+			"/usr/lib64/xmonad-contrib-0.11.2/ghc-7.8.4/libHSxmonad-contrib-0.11.2-ghc7.8.4.so"
+		]
+	],
+	"x11-wm/xmonad:0": [
+		"x11-wm/xmonad-9999",
+		"1729",
+		[
+			"/usr/lib64/xmonad-0.11/ghc-7.8.4/libHSxmonad-0.11-ghc7.8.4.so"
+		]
+	]
+}

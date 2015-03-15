@@ -1,0 +1,4 @@
+media-video/vlc httpd lua rtsp projectm vaapi opencv postproc
+media-video/ffmpeg threads vaapi sse3 ssse3
+virtual/ffmpeg threads vaapi
+media-video/mplayer2 ssse3
