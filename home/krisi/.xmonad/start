@@ -15,9 +15,11 @@ sh ~/.fehbg &
 terminator &
 nm-applet &
 parcellite &
-volti &
+pnmixer &
+qtox &
+sleep 10
 xscreensaver -nosplash &
-sleep 30
+sleep 10
 pidof chrome || (chromium &)
 skype &
 #skype-call-recorder &

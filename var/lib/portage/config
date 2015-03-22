@@ -1,8 +1,12 @@
-/etc/portage/repo.postsync.d/example 6d5082c492fb45f13182deb5c89f0296
-/etc/cupshelpers/preferreddrivers.xml 0b19e50addd76f454133ab2039f5f1c8
+/etc/pulse/daemon.conf aad967b4f7767d0c902abf5d2f58ad63
 /etc/hosts 55f31266cf1f992ea7649bb81570f9e6
 /etc/X11/Sessions/xmonad 58724603d20a84b58ecc6af1d13b9e99
 /etc/locale.gen 9bfbcfea3e186c70fe5501512d367de2
+/etc/ssh/sshd_config 7a9c455a7d388db58f05c50b584f8761
 /etc/init.d/pydoc-3.4 22b084e115768b32a7f03acb61f9befe
+/etc/pulse/default.pa 5fc1c0181cc6764c37c99151504898d6
+/etc/portage/repo.postsync.d/example 6d5082c492fb45f13182deb5c89f0296
 /etc/conf.d/pydoc-3.4 7ae861b4d25452fd61c401aa792e9c65
 /etc/systemd/logind.conf 8d416621b8cb3af8fa9b1b49297ce35a
+/etc/cupshelpers/preferreddrivers.xml 0b19e50addd76f454133ab2039f5f1c8
+/etc/ssh/ssh_config 68ec4d0913dd59fa5f2de2920dd9622c

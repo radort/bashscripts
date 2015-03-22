@@ -1,1 +1,1 @@
-../../usr/portage/profiles/default/linux/amd64/13.0/desktop
+../../var/db/repos/gentoo/profiles/default/linux/amd64/13.0/desktop

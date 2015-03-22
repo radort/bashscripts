@@ -104,8 +104,8 @@ myKeys conf@(XConfig {XMonad.modMask = mm}) = M.fromList $
     , ((0, 0x1008ff02), spawn "xbacklight -inc 10")
     , ((0, 0x1008ff03), spawn "xbacklight -dec 10")
 
-    , ((mm, xK_Down), spawn "pactl set-sink-volume 0 -- -10%")
-    , ((mm, xK_Up), spawn "pactl set-sink-volume 0 -- +10%")
+    , ((mm, xK_Down), spawn "pactl set-sink-volume 0 -10%")
+    , ((mm, xK_Up), spawn "pactl set-sink-volume 0 +10%")
 
     , ((controlMask, xK_KP_Left), spawn "xdotool mousemove_relative -- -10 0")
     , ((controlMask, xK_KP_Right), spawn "xdotool mousemove_relative 10 0")
@@ -155,6 +155,8 @@ xmonadConfig = pagerHints $ defaultConfig
         , className =? "Firefox" -?> doShift "2"
         , className =? "Taffybar-linux-x86_64" -?> doIgnore
         , className =? "Skype" -?> doShift "3"
+        , className =? "utox" -?> doShift "3"
+        , className =? "qTox" -?> doShift "3"
         , className =? "Transmission-gtk" -?> doShift "8"
         , className =? "Conky" -?> doIgnore
         , className =? "Wine" -?> doFloat

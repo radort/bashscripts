@@ -41,11 +41,9 @@ sys-libs/glibc no-lto.conf
 
 # My list
 sys-devel/gcc no-lto.conf
-sys-process/numactl no-lto.conf
 sys-process/runit no-lto.conf
 dev-python/pyorbit no-lto.conf
 x11-misc/x11vnc no-lto.conf
-net-misc/tightvnc no-lto.conf
 dev-qt/qtgui no-lto.conf
 sys-boot/syslinux no-lto.conf
 dev-vcs/git no-lto.conf
@@ -54,23 +52,19 @@ dev-libs/weston no-lto.conf
 mail-mta/nullmailer no-lto.conf
 app-admin/sudo no-lto.conf
 app-arch/p7zip no-lto.conf
-media-sound/audacity no-lto.conf
-sci-electronics/gspiceui no-lto.conf
 media-video/vlc no-lto.conf
-net-libs/webkit-gtk no-lto.conf
-app-arch/pax no-lto.conf
 dev-libs/boost no-lto.conf
 net-print/cups no-lto.conf
-media-gfx/mypaint no-lto.conf
 app-office/libreoffice no-lto.conf
 dev-libs/libaio no-lto.conf
 gnome-base/orbit no-lto.conf
-dev-haskell/network no-lto.conf
 sys-devel/flex no-lto.conf
 media-libs/libvpx no-lto.conf
 sys-apps/man-db no-lto.conf
 x11-libs/gtkglext no-lto.conf
 
-cross-*/* defflags.conf
+dev-haskell/* no-lto.conf
+dev-vcs/darcs no-lto.conf
+x11-wm/xmonad* no-lto.conf
 
-# ufsutils avrdude gtkglext 
+cross-*/* defflags.conf
