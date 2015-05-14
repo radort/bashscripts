@@ -1,0 +1,5 @@
+www-client/firefox system-cairo system-icu system-jpeg system-libvpx system-sqlite
+
+media-libs/libvpx postproc
+dev-db/sqlite secure-delete
+

@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+ulimit -u 100
+ulimit -m 100
+ulimit -f 100
+
+exec /bin/zsh

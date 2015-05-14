@@ -1,8 +1,10 @@
 gnome-extra/evolution-data-server -gnome-online-accounts
 gnome-base/gnome-control-center -gnome-online-accounts
 gnome-base/nautilus -previewer
+x11-wm/mutter -kms
 
 # Forced
 media-libs/cogl gles2
 media-libs/gst-plugins-base theora
 dev-libs/folks eds
+media-libs/grilo playlist

@@ -1,0 +1,19 @@
+--- a/tests/no-config/test.list.exp
++++ b/tests/no-config/test.list.exp
+@@ -1,5 +1,4 @@
+  * gcc-config: No gcc profile is active!
+-
+ Using gcc-config info in @ROOT@/
+ @GCC_CONFIG@: @ROOT@/etc/env.d/gcc/config-x86_64-pc-linux-gnu: No such file or directory
+  [1] x86_64-pc-linux-gnu-4.6.2
+--- a/tests/run_tests
++++ b/tests/run_tests
+@@ -43,7 +43,7 @@ cmp_log() {
+ 	args+=( -e "s|: line [0-9]*: |: |g" )
+ 	sed "${args[@]}" "${exp}" > "${exp}.tmp"
+ 	sed "${args[@]}" "${log}" > "${log}.tmp"
+-	diff -u "${exp}.tmp" "${log}.tmp" > "${log}.diff"
++	diff -uw "${exp}.tmp" "${log}.tmp" > "${log}.diff"
+ 	ret=$?
+ 	rm "${exp}.tmp"
+ 	return ${ret}

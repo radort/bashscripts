@@ -1,5 +1,5 @@
 media-video/vlc qt5 httpd lua rtsp projectm vaapi opencv postproc
-media-video/ffmpeg threads vaapi sse3 ssse3
+media-video/ffmpeg threads vaapi sse3 ssse3 openssl
 virtual/ffmpeg threads vaapi
-media-video/mplayer2 ssse3
+media-video/mpv vaapi
 media-sound/mpd inotify

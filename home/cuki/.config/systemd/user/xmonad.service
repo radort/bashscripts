@@ -1,0 +1,9 @@
+[Unit]
+Description=Xmonad window manager
+
+[Service]
+ExecStart=/usr/bin/xmonad
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=wm.target

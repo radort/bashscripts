@@ -15,7 +15,7 @@
 
 # NOTE: If your BOOT partition is ReiserFS, add the notail option to opts.
 /dev/sda1		/boot		vfat		noauto,noatime,x-systemd.automount	0 0
-/dev/sda3		/		btrfs		noatime,subvol=gentoo		0 0
-/dev/sda4		/home		ext4		defaults,noatime		0 0
-/dev/sda5		none		swap		sw,noauto			0 0
+/dev/sda3		/			btrfs		noatime,subvol=gentoo				0 0
+/dev/sda4		/home		ext4		defaults,noatime					0 0
+/dev/sda5		none		swap		sw,noauto							0 0
 portage			/var/tmp/portage	tmpfs	defaults,noauto,x-systemd.automount	0 0

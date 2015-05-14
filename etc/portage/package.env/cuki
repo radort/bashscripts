@@ -3,6 +3,8 @@ www-client/firefox no-tmpfs.conf
 www-client/chromium no-tmpfs.conf
 sys-devel/llvm no-tmpfs.conf
 dev-lang/ghc no-tmpfs.conf
+dev-python/pypy no-tmpfs.conf
+dev-java/icedtea no-tmpfs.conf
 
 
 
@@ -45,9 +47,7 @@ sys-process/runit no-lto.conf
 dev-python/pyorbit no-lto.conf
 x11-misc/x11vnc no-lto.conf
 dev-qt/qtgui no-lto.conf
-sys-boot/syslinux no-lto.conf
 dev-vcs/git no-lto.conf
-dev-lang/ghc no-lto.conf
 dev-libs/weston no-lto.conf
 mail-mta/nullmailer no-lto.conf
 app-admin/sudo no-lto.conf
@@ -62,9 +62,22 @@ sys-devel/flex no-lto.conf
 media-libs/libvpx no-lto.conf
 sys-apps/man-db no-lto.conf
 x11-libs/gtkglext no-lto.conf
+sys-fs/btrfs-progs no-lto.conf
+dev-util/codeblocks no-lto.conf
+media-gfx/mypaint no-lto.conf
 
+dev-lang/ghc no-lto.conf
 dev-haskell/* no-lto.conf
 dev-vcs/darcs no-lto.conf
+app-admin/haskell-updater no-lto.conf
 x11-wm/xmonad* no-lto.conf
+x11-misc/taffybar no-lto.conf
+
+dev-libs/libffi no-lto.conf
+app-misc/vlock no-lto.conf
+media-libs/mesa no-lto.conf
 
 cross-*/* defflags.conf
+
+net-wireless/iw no-O.conf
+sys-devel/binutils gold.conf
