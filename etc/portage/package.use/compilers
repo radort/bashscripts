@@ -1,2 +1,3 @@
 sys-devel/gcc -gtk -fortran
-sys-devel/llvm clang
+sys-devel/gcc:5.1 -graphite
+sys-devel/llvm clang gold

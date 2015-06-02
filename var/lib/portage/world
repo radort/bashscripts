@@ -17,9 +17,9 @@ app-emulation/qemu
 app-laptop/i8kutils
 app-misc/figlet
 app-misc/reptyr
-app-misc/sl
 app-misc/tmux
 app-misc/vlock
+app-mobilephone/heimdall
 app-office/libreoffice
 app-portage/gentoolkit
 app-portage/smart-live-rebuild
@@ -33,9 +33,12 @@ cross-avr/gcc
 dev-embedded/gnome-avrdude
 dev-java/gradle-bin
 dev-java/icedtea
+dev-lang/mono
 dev-libs/libfreenect
 dev-python/requests
 dev-util/android-tools
+dev-util/geany
+dev-vcs/bzr
 dev-vcs/git
 dev-vcs/subversion
 games-emulation/dosbox
@@ -68,6 +71,7 @@ net-analyzer/gnu-netcat
 net-analyzer/hydra
 net-analyzer/nload
 net-analyzer/nmap
+net-analyzer/tcpdump
 net-analyzer/wireshark
 net-dns/bind-tools
 net-ftp/ftp
@@ -91,6 +95,7 @@ net-print/gutenprint
 net-wireless/aircrack-ng
 net-wireless/hostapd
 net-wireless/reaver
+sys-apps/biosdisk
 sys-apps/hdparm
 sys-apps/kexec-tools
 sys-apps/pv
@@ -118,6 +123,7 @@ x11-apps/transset
 x11-base/xorg-x11
 x11-misc/compton
 x11-misc/gmrun
+x11-misc/kbdd
 x11-misc/kinect-mouse
 x11-misc/lightdm
 x11-misc/parcellite
@@ -130,4 +136,3 @@ x11-misc/x2vnc
 x11-misc/xautolock
 x11-misc/xdotool
 x11-misc/xtrlock
-x11-terms/terminator
