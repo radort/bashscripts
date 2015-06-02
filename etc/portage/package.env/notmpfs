@@ -1,0 +1,7 @@
+app-office/libreoffice no-tmpfs.conf
+www-client/firefox no-tmpfs.conf
+www-client/chromium no-tmpfs.conf
+sys-devel/llvm no-tmpfs.conf
+dev-lang/ghc no-tmpfs.conf
+dev-python/pypy no-tmpfs.conf
+dev-java/icedtea no-tmpfs.conf
