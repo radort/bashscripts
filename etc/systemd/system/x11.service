@@ -1,0 +1,8 @@
+[Unit]
+After=systemd-user-sessions.service
+ 
+[Service]
+ExecStart=/sbin/agetty --autologin cuki --noclear tty7 linux
+ 
+[Install]
+WantedBy=multi-user.target
