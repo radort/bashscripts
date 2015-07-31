@@ -1,7 +1,7 @@
-app-office/libreoffice no-tmpfs.conf
-www-client/firefox no-tmpfs.conf
-www-client/chromium no-tmpfs.conf
-sys-devel/llvm no-tmpfs.conf
-dev-lang/ghc no-tmpfs.conf
-dev-python/pypy no-tmpfs.conf
-dev-java/icedtea no-tmpfs.conf
+app-office/libreoffice no-tmpfs
+www-client/firefox no-tmpfs
+www-client/chromium no-tmpfs
+sys-devel/llvm no-tmpfs
+dev-lang/ghc no-tmpfs
+dev-python/pypy no-tmpfs
+dev-java/icedtea no-tmpfs

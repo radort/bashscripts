@@ -49,7 +49,7 @@ main = do
       mem = pollingGraphNew memCfg 1 memCallback
       cpu = pollingGraphNew cpuCfg 1 cpuCallback
       tray = systrayNew
-      kbd = kbdLayoutNew ["[<span fgcolor='#7f7fff'>EN</span>]","[<span fgcolor='#ffff00'>BG</span>]"] 1.0
+      kbd = kbdLayoutNew ["[<span fgcolor='#7f7fff'>EN</span>]","[<span fgcolor='#ffff00'>BG</span>]","[<span fgcolor='#00ff00'>DV</span>]"] 1.0
 --      battery = batteryBarNew (defaultBarConfig colorFunc) "$percentage$% $charge$$time$" 5
       battery = textBatteryNew "$percentage$% $time$" 5
           where colorFunc pct | pct < 0.1 = (1, 0, 0)

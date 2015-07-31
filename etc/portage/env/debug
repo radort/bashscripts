@@ -1,0 +1,5 @@
+CFLAGS="${CFLAGS} -O0 -ggdb3"
+CXXFLAGS="${CXXFLAGS} -O0 -ggdb3"
+LDFLAGS="${LDFLAGS} -O0 -ggdb3"
+
+FEATURES="splitdebug"

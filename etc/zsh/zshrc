@@ -38,6 +38,7 @@ setopt ksh_arrays
 
 
 zstyle ':completion:*' menu select
+zstyle ':completion:*' rehash true
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:descriptions' format '%U%B%F{yellow}%d%f%b%u'
@@ -82,8 +83,8 @@ key[Left]="^[[D"
 key[Right]="^[[C"
 key[Delete]="^[[3~"
 key[Insert]="^[[2~"
-key[Home]="^[OH"
-key[End]="^[OF"
+key[Home]="^[[H"
+key[End]="^[[F"
 key[PageUp]="^[[5~"
 key[PageDown]="^[[6~"
 key[CtrlRight]="^[[1;5C"
@@ -100,31 +101,32 @@ key[ShiftTab]="^[[Z"
 bindkey -v
 
 for _mode in vi{ins,cmd}; do
-	bindkey -M $_mode "${key[Up]}"        up-line-or-history
-	bindkey -M $_mode "${key[Down]}"      down-line-or-history
-	bindkey -M $_mode "${key[Left]}"      backward-char
-	bindkey -M $_mode "${key[Right]}"     forward-char
-	bindkey -M $_mode "${key[Delete]}"    delete-char
-	bindkey -M $_mode "${key[Insert]}"    overwrite-mode
-	bindkey -M $_mode "${key[Home]}"      beginning-of-line
-	bindkey -M $_mode "${key[End]}"       end-of-line
-	bindkey -M $_mode "${key[PageUp]}"    history-beginning-search-backward
-	bindkey -M $_mode "${key[PageDown]}"  history-beginning-search-forward
-	bindkey -M $_mode "${key[CtrlRight]}" forward-word
-	bindkey -M $_mode "${key[CtrlLeft]}"  backward-word
-	bindkey -M $_mode "${key[AltRight]}"  forward-word
-	bindkey -M $_mode "${key[AltLeft]}"   backward-word
-#               _
+	bindkey -M $_mode "${key[Up]}"            up-line-or-history
+	bindkey -M $_mode "${key[Down]}"          down-line-or-history
+	bindkey -M $_mode "${key[Left]}"          backward-char
+	bindkey -M $_mode "${key[Right]}"         forward-char
+	bindkey -M $_mode "${key[Delete]}"        delete-char
+	bindkey -M $_mode "${key[Insert]}"        overwrite-mode
+	bindkey -M $_mode "${key[Home]}"          beginning-of-line
+	bindkey -M $_mode "${key[End]}"           end-of-line
+	bindkey -M $_mode "${key[PageUp]}"        history-beginning-search-backward
+	bindkey -M $_mode "${key[PageDown]}"      history-beginning-search-forward
+	bindkey -M $_mode "${key[CtrlRight]}"     forward-word
+	bindkey -M $_mode "${key[CtrlLeft]}"      backward-word
+	bindkey -M $_mode "${key[AltRight]}"      forward-word
+	bindkey -M $_mode "${key[AltLeft]}"       backward-word
+#
 	bindkey -M $_mode "${key[CtrlRightTmux]}" forward-word
 	bindkey -M $_mode "${key[CtrlLeftTmux]}"  backward-word
 	bindkey -M $_mode "${key[HomeTmux]}"      beginning-of-line
 	bindkey -M $_mode "${key[EndTmux]}"       end-of-line
-#               _
+#
 	bindkey -M $_mode "${key[AltBackspace]}"  backward-kill-word
 done
 
 zmodload zsh/complist
 bindkey -M menuselect "${key[ShiftTab]}" reverse-menu-complete
+
 bindkey -M menuselect "${key[Home]}" emacs-editing-mode
 bindkey -M menuselect "${key[End]}" emacs-editing-mode
 bindkey -M menuselect "${key[HomeTmux]}" emacs-editing-mode
@@ -179,6 +181,7 @@ alias cal='cal -m'
 alias lspci=/usr/sbin/lspci
 alias prime='DRI_PRIME=1'
 alias update='emerge -DuNav --with-bdeps=y world'
+alias unmerge='emerge --unmerge'
 alias pbg='ping google.bg'
 alias p88='ping 8.8.8.8'
 alias tmux='tmux -2'

@@ -1,3 +1,18 @@
+"call pathogen#infect('/usr/local/bundle/{}')
+"call pathogen#helptags()
+
+set runtimepath+=/usr/local/bundle/badwolf
+set runtimepath+=/usr/local/bundle/nerdtree
+set runtimepath+=/usr/local/bundle/detectindent
+"set runtimepath+=/usr/local/bundle/jshint2.vim
+
+set runtimepath+=/usr/local/bundle/YouCompleteMe
+"set runtimepath+=/usr/local/bundle/AutoComplPop
+"set runtimepath+=/usr/local/bundle/clang_complete
+"set runtimepath+=/usr/local/bundle/supertab
+"set runtimepath+=/usr/local/bundle/syntastic
+
+
 set history=1000
 set wildmenu ruler showcmd
 set backspace=indent,eol,start
@@ -12,13 +27,14 @@ set showfulltag
 set scrolloff=5 sidescrolloff=5
 set hidden
 set number relativenumber
-set smartindent autoindent cindent smarttab
+set smartindent autoindent smarttab cindent
 set autoread
 set ts=4 sw=4 sts=4
 set mouse=a
 set timeoutlen=200
 
 syntax enable
+
 if filereadable("Makefile")
 	setlocal makeprg=make
 else
@@ -30,7 +46,9 @@ else
 	autocmd FileType javascript setlocal makeprg=node\ '%'
 	autocmd Filetype html       setlocal ts=2 sts=2 sw=2
 endif
-"	autocmd BufReadPost * :DetectIndent
+
+
+autocmd BufReadPost * :DetectIndent
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
@@ -67,11 +85,20 @@ nmap <C-H> <C-W>h
 
 set langmap=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM
 
-call pathogen#infect('/usr/local/bundle/{}')
-call pathogen#helptags()
-
 let g:ycm_global_ycm_extra_conf = '/etc/vim/ycm_extra_conf.py'
 set completeopt-=preview
+
+"let g:syntastic_c_compiler_options = '-std=gnu11'
+"let g:syntastic_cpp_compiler_options = '-std=gnu++1z'
+"
+""set conceallevel=2
+""set concealcursor=vin
+"let g:clang_snippets=1
+"let g:clang_conceal_snippets=1
+"let g:clang_snippets_engine='clang_complete'
+"let g:clang_user_options = '-std=gnu++1z'
+"
+"let g:SuperTabDefaultCompletionType='<c-x><c-u><c-p>'
 
 if &term =~? 'xterm'
 	set t_ut=

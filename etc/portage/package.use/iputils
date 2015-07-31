@@ -1,1 +1,1 @@
-net-misc/iputils tracepath
+net-misc/iputils tracepath arping

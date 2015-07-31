@@ -1,7 +1,7 @@
 gnome-extra/evolution-data-server -gnome-online-accounts
 gnome-base/gnome-control-center -gnome-online-accounts
 gnome-base/nautilus -previewer
-x11-wm/mutter -kms
+gnome-extra/zenity -webkit
 
 # Forced
 media-libs/cogl gles2

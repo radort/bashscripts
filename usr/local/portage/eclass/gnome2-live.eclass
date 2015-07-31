@@ -1,0 +1,1 @@
+/var/db/repos/gnome/eclass/gnome2-live.eclass

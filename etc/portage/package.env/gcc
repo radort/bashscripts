@@ -1,0 +1,45 @@
+#---------------CORE PACKAGES TO BUILD WITH GCC:
+sys-apps/which gcc
+sys-fs/reiserfsprogs gcc
+sys-libs/ncurses gcc
+sys-libs/zlib gcc
+sys-apps/busybox gcc
+sys-fs/e2fsprogs gcc
+sys-devel/binutils gcc
+sys-libs/glibc gcc
+sys-devel/dragonegg gcc
+dev-libs/openssl gcc
+sys-boot/grub gcc
+#---------------USER PACKAGES TO BUILD WITH GCC:
+sys-apps/pacman gcc
+www-client/firefox gcc
+x11-libs/cairo gcc
+media-libs/mesa gcc
+
+# Fail to build
+net-libs/libasyncns gcc
+sci-libs/fftw gcc
+dev-libs/libbsd gcc
+sys-devel/dev86 gcc
+sys-apps/sandbox gcc
+app-text/yodl gcc
+sys-fs/fuse gcc
+sys-firmware/sgabios gcc
+dev-libs/dotconf gcc
+x11-libs/pixman gcc
+media-libs/libid3tag gcc
+sys-apps/kexec-tools gcc
+dev-libs/libisofs gcc
+media-libs/id3lib gcc
+sys-devel/gettext gcc
+
+# zsh completion problems
+app-shells/zsh gcc
+
+# GTK+3 stuff segfault
+sys-apps/dbus gcc
+
+# Xorg crashes
+#x11-base/xorg-server
+x11-drivers/xf86-video-intel gcc no-O
+x11-drivers/xf86-video-ati gcc

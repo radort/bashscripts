@@ -1,6 +1,7 @@
-dev-lang/ghc no-lto.conf
-dev-haskell/* no-lto.conf
-dev-vcs/darcs no-lto.conf
-app-admin/haskell-updater no-lto.conf
-x11-wm/xmonad* no-lto.conf
-x11-misc/taffybar no-lto.conf
+dev-lang/ghc no-lto
+dev-haskell/* no-lto
+dev-vcs/darcs no-lto
+app-admin/haskell-updater no-lto
+x11-wm/xmonad* no-lto
+x11-misc/taffybar no-lto
+x11-misc/xmobar no-lto

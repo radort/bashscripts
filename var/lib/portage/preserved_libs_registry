@@ -1,22 +1,10 @@
 {
 	"app-text/poppler:0": [
-		"app-text/poppler-0.33.0-r1",
-		"6053",
+		"app-text/poppler-0.34.0",
+		"8848",
 		[
 			"/usr/lib64/libpoppler.so.51.0.0",
 			"/usr/lib64/libpoppler.so.51"
-		]
-	],
-	"dev-libs/icu:0": [
-		"dev-libs/icu-55.1",
-		"5275",
-		[
-			"/usr/lib64/libicudata.so.54.1",
-			"/usr/lib64/libicui18n.so.54.1",
-			"/usr/lib64/libicuuc.so.54.1",
-			"/usr/lib64/libicudata.so.54",
-			"/usr/lib64/libicui18n.so.54",
-			"/usr/lib64/libicuuc.so.54"
 		]
 	]
 }

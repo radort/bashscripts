@@ -6,8 +6,6 @@ dev-vcs/git python_single_target_python2_7 python_targets_python2_7
 sys-libs/talloc python_single_target_python2_7 python_targets_python2_7
 sys-libs/tevent python_single_target_python2_7 python_targets_python2_7
 app-i18n/ibus python_single_target_python2_7 python_targets_python2_7
-app-text/asciidoc python_single_target_python2_7 python_targets_python2_7
-media-libs/opencv python_single_target_python2_7 python_targets_python2_7
 dev-util/itstool python_single_target_python2_7 python_targets_python2_7
 app-admin/system-config-printer-gnome python_single_target_python2_7 python_targets_python2_7
 app-admin/system-config-printer-common python_single_target_python2_7 python_targets_python2_7
@@ -16,6 +14,7 @@ sys-devel/distcc python_single_target_python2_7 python_targets_python2_7
 sys-libs/tdb python_single_target_python2_7 python_targets_python2_7
 dev-util/gtk-doc python_single_target_python2_7 python_targets_python2_7
 gnome-base/libglade python_single_target_python2_7 python_targets_python2_7
+app-text/asciidoc python_single_target_python2_7 python_targets_python2_7
 
 app-editors/vim python_single_target_python2_7 -python_single_target_python3_4
 app-editors/gvim python_single_target_python2_7 -python_single_target_python3_4

@@ -1,0 +1,7 @@
+CFLAGS="-pipe"
+CXXFLAGS="-pipe"
+LDFLAGS=""
+
+AR="" 
+NM=""
+RANLIB=""

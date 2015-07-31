@@ -1,0 +1,10 @@
+--- a/auth-dialog/Makefile.am
++++ b/auth-dialog/Makefile.am
+@@ -5,6 +5,7 @@
+ 	$(GTK_CFLAGS) \
+         $(LIBSECRET_CFLAGS) \
+         $(NMGTK_CFLAGS) \
++	-iquote "$(srcdir)/.." \
+ 	-DICONDIR=\""$(datadir)/pixmaps"\" \
+ 	-DBINDIR=\""$(bindir)"\" \
+ 	-DG_DISABLE_DEPRECATED \

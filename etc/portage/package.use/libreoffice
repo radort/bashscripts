@@ -1,1 +1,1 @@
-#app-office/libreoffice -gtk gtk3
+app-office/libreoffice -gtk gtk3

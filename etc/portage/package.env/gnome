@@ -1,0 +1,6 @@
+gnome-base/gnome-shell debug
+#x11-libs/gtk+:3 debug
+#dev-libs/glib debug
+#dev-libs/wayland no-lto debug
+dev-lang/spidermonkey debug
+dev-libs/gjs debug
